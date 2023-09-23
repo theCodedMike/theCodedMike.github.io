@@ -37,10 +37,9 @@ export default hopeTheme({
       // sidebar
       sidebar: enSidebar,
 
-      footer:
-          'Theme by <a href="https://theme-hope.vuejs.press">vuepress-theme-hope</a>',
+      footer: 'Theme by <a href="https://theme-hope.vuejs.press">VuePress Theme Hope</a>',
 
-        copyright: "MIT Licensed, © 2019~Present Mike",
+      copyright: "MIT Licensed, © 2023~Present Mike",
 
       displayFooter: true,
 
@@ -64,8 +63,7 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer:
-          '主题使用 <a href="https://theme-hope.vuejs.press/zh/">VuePress Theme Hope</a> | <a href="https://mister-hope.com/about/site.html" target="_blank">关于网站</a>',
+      footer: '主题使用 <a href="https://theme-hope.vuejs.press/zh/">VuePress Theme Hope</a>',
 
       copyright: "基于 MIT 协议，© 2023~至今 Mike",
 

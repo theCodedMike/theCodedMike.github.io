@@ -2,8 +2,8 @@
 title: Rust程序设计语言
 icon: gears
 date: 2023-09-23
-category: rust语法
-star: true
+category: Rust语法
+sticky: true
 ---
 
 这本书主要描述了Rust的基本语法。
