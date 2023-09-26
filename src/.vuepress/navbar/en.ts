@@ -4,7 +4,7 @@ export const enNavbar = navbar([
   "/",
   {
     text: "Rust",
-    icon: "pen-to-square",
+    icon: "note",
     prefix: "/rust/",
     children: [
       {
@@ -32,5 +32,25 @@ export const enNavbar = navbar([
         ]
       }
     ],
+  },
+  {
+    text: "Algorithm",
+    icon: "discover",
+    prefix: "/algorithm/",
+    children: [
+      {
+        text: "Theory",
+        children: [
+          "1800/",
+          "introduction/"
+        ]
+      },
+      {
+        text: "Exercise",
+        children: [
+          "leetcode/"
+        ]
+      }
+    ]
   }
 ]);

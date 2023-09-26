@@ -1,6 +1,6 @@
 ---
 title: Foreword
-icon: gears
+icon: note
 date: 2023-09-24
 category: Rust Syntax
 tag:

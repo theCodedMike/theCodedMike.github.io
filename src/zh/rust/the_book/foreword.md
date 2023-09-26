@@ -1,6 +1,6 @@
 ---
 title: 前言
-icon: gears
+icon: note
 date: 2023-09-24
 category: Rust语法
 tag:

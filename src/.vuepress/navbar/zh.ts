@@ -4,7 +4,7 @@ export const zhNavbar = navbar([
   "/zh/",
   {
     text: "Rust",
-    icon: "pen-to-square",
+    icon: "note",
     prefix: "/zh/rust/",
     children: [
       {
@@ -30,5 +30,25 @@ export const zhNavbar = navbar([
         children:[]
       }
     ],
+  },
+  {
+    text: "算法与数据结构",
+    icon: "discover",
+    prefix: "/zh/algorithm/",
+    children: [
+      {
+        text: "理论",
+        children: [
+          "1800/",
+          "introduction/"
+        ]
+      },
+      {
+        text: "练习",
+        children: [
+          "leetcode/"
+        ]
+      }
+    ]
   }
 ]);

@@ -1,6 +1,6 @@
 ---
 title: The Rust Programming Language
-icon: gears
+icon: note
 date: 2023-09-23
 category: Rust Syntax
 sticky: true

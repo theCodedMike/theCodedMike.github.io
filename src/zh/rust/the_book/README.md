@@ -1,6 +1,6 @@
 ---
 title: Rust程序设计语言
-icon: gears
+icon: note
 date: 2023-09-23
 category: Rust语法
 sticky: true
