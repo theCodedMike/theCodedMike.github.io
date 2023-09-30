@@ -3,6 +3,7 @@ title: 35, 搜索插入位置
 icon: discover
 date: 2023-09-27
 order: 1
+sticky: true
 category: array
 tag: 
   - easy
@@ -94,10 +95,10 @@ pub fn binary_search_2(nums: Vec<i32>, target: i32) -> i32 {
 @tab Java
 ```java
 public int searchInsert(int[] nums, int target) {
-    //return this.binary_search_1(nums, target);
-    return this.binary_search_2(nums, target);
+    //return this.binarySearch1(nums, target);
+    return this.binarySearch2(nums, target);
 }
-public int binary_search_1(int[] nums, int target) {
+public int binarySearch1(int[] nums, int target) {
     int left = 0;
     int right = nums.length;
     while (left < right) {
@@ -112,7 +113,7 @@ public int binary_search_1(int[] nums, int target) {
     }
     return left;
 }
-public int binary_search_2(int[] nums, int target) {
+public int binarySearch2(int[] nums, int target) {
     int left = 0;
     int right = nums.length - 1;
     while (left <= right) {
