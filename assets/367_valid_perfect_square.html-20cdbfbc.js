@@ -1,1 +1,0 @@
-import{_ as e}from"./plugin-vue_export-helper-c27b6911.js";import{o as _,c as r}from"./app-d85ab8b4.js";const t={};function c(o,a){return _(),r("div")}const n=e(t,[["render",c],["__file","367_valid_perfect_square.html.vue"]]);export{n as default};
