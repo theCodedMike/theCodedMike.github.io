@@ -30,7 +30,10 @@ assert_eq(nums[6], xx); // ERROR，index out of bounds
 [367: 有效的完全平方数](367_valid_perfect_square.md)
 
 ### 移除元素
-
+[26: 删除有序数组中的重复项](26_remove_duplicates_from_sorted_array.md)
+[283: 移动零](283_move_zeroes.md)
+[844: 比较含退格的字符串](844_backspace_string_compare.md)
+[977: 有序数组的平方](977_squares_of_a_sorted_array.md)
 
 ### 有序数组的平方
 
