@@ -9,7 +9,7 @@ tag:
   - easy
 ---
 
-## 1 Problem
+## I Problem
 
 
 **Example 1:**
@@ -27,7 +27,7 @@ tag:
 **Related Topics**
 
 
-## 2 Solution
+## II Solution
 ### Approach 1: Brute Force
 ::: code-tabs
 @tab Rust

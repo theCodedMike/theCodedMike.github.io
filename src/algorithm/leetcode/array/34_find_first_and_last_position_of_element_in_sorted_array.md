@@ -11,7 +11,7 @@ tag:
   - binary search
 ---
 
-## 1 Problem
+## I Problem
 Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
 
 If target is not found in the array, return [-1, -1].
@@ -42,7 +42,7 @@ Output: [-1,-1]
 - Array
 - Binary Search
 
-## 2 Solution
+## II Solution
 ### Approach 1: Binary Search
 ::: code-tabs
 @tab Rust

@@ -12,7 +12,7 @@ tag:
 ---
 
 
-## 1 Problem
+## I Problem
 Given a positive integer num, return true if num is a perfect square or false otherwise.
 
 A perfect square is an integer that is the square of an integer. In other words, it is the product of some integer with itself.
@@ -39,7 +39,7 @@ Explanation: We return false because 3.742 * 3.742 = 14 and 3.742 is not an inte
 - Math
 - Binary Search
 
-## 2 Solution
+## II Solution
 ### Approach 1: Binary Search
 
 ::: code-tabs

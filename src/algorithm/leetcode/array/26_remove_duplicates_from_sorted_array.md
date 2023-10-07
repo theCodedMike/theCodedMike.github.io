@@ -11,7 +11,7 @@ tag:
   - two pointers
 ---
 
-## 1 Problem
+## I Problem
 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once.
 The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 
@@ -44,7 +44,7 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 - Array
 - Two Pointers
 
-## 2 Solution
+## II Solution
 ### Approach 1: Brute Force
 ::: code-tabs
 @tab Rust
@@ -89,7 +89,7 @@ public int removeDuplicates(int[] nums) {
 ```
 :::
 
-### Approach 2: Double Pointer
+### Approach 2: Two Pointers
 ::: code-tabs
 @tab Rust
 ```rust
