@@ -2,7 +2,7 @@
 title: 367, Valid Perfect Square
 icon: discover
 date: 2023-10-01
-order: 4
+order: 5
 sticky: true
 category: array
 tag: 

@@ -2,7 +2,7 @@
 title: 367, 有效的完全平方数
 icon: discover
 date: 2023-10-01
-order: 4
+order: 5
 sticky: true
 category: array
 tag: 

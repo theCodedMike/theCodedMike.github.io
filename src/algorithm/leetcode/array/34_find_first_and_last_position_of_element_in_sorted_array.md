@@ -2,7 +2,7 @@
 title: 34, Find First and Last Position of Element in Sorted Array
 icon: discover
 date: 2023-09-28
-order: 2
+order: 3
 sticky: true
 category: array
 tag: 

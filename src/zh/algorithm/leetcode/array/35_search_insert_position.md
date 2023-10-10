@@ -2,7 +2,7 @@
 title: 35, 搜索插入位置
 icon: discover
 date: 2023-09-27
-order: 1
+order: 2
 sticky: true
 category: array
 tag: 

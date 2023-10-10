@@ -2,7 +2,7 @@
 title: 35, Search Insert Position
 icon: discover
 date: 2023-09-27
-order: 1
+order: 2
 sticky: true
 category: array
 tag: 

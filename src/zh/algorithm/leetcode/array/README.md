@@ -24,6 +24,7 @@ assert_eq(nums[6], xx); // ERROR，index out of bounds
 ```
 
 ### 二分查找
+[704: 二分查找](704_binary_search.md)
 [35: 搜索插入位置](35_search_insert_position.md)
 [34: 在排序数组中查找元素的第一个和最后一个位置](34_find_first_and_last_position_of_element_in_sorted_array.md)
 [69: x的平方根](69_sqrt_x.md)

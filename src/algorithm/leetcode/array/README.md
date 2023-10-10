@@ -24,6 +24,7 @@ assert_eq(nums[6], xx); // ERROR，index out of bounds
 ```
 
 ### Binary Search
+[704: Binary Search](704_binary_search.md)
 [35: Search Insert Position](35_search_insert_position.md)
 [34: Find First and Last Position of Element in Sorted Array](34_find_first_and_last_position_of_element_in_sorted_array.md)
 [69: Sqrt(x)](69_sqrt_x.md)
