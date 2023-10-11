@@ -2,7 +2,7 @@
 title: 844, Backspace String Compare
 icon: discover
 date: 2023-10-08
-order: 7
+order: 9
 sticky: true
 category: array
 tag: 

@@ -2,7 +2,7 @@
 title: 26, 删除有序数组中的重复项
 icon: discover
 date: 2023-10-06
-order: 5
+order: 7
 sticky: true
 category: array
 tag: 

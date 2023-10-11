@@ -2,7 +2,7 @@
 title: 977, Squares of a Sorted Array
 icon: discover
 date: 2023-10-09
-order: 8
+order: 10
 sticky: true
 category: array
 tag: 
@@ -71,6 +71,10 @@ public int[] sortedSquares(int[] nums) {
 @tab Rust
 ```rust
 pub fn sorted_squares(nums: Vec<i32>) -> Vec<i32> {
+    //Self::two_pointers_1(nums)
+    Self::two_pointers_2(nums)
+}
+pub fn two_pointers_1(nums: Vec<i32>) -> Vec<i32> {
     let len = nums.len();
     let mut left = 0;
     let mut right = len - 1;
@@ -103,7 +107,29 @@ pub fn sorted_squares(nums: Vec<i32>) -> Vec<i32> {
             left += 1;
         }
     }
-    
+
+    res
+}
+
+pub fn two_pointers_2(nums: Vec<i32>) -> Vec<i32> {
+    let mut left = 0;
+    let mut right = nums.len() as i32 - 1;
+    let mut idx = nums.len() as i32 - 1;
+    let mut res = vec![0; nums.len()];
+
+    while left <= right {
+        let square_of_left = nums[left as usize].pow(2);
+        let square_of_right = nums[right as usize].pow(2);
+        res[idx as usize] = if square_of_left > square_of_right {
+            left += 1;
+            square_of_left
+        } else {
+            right -= 1;
+            square_of_right
+        };
+        idx -= 1;
+    }
+
     res
 }
 ```
@@ -111,6 +137,10 @@ pub fn sorted_squares(nums: Vec<i32>) -> Vec<i32> {
 @tab Java
 ```java
 public int[] sortedSquares(int[] nums) {
+    //return this.twoPointers1(nums);
+    return this.twoPointers2(nums);
+}
+public int[] twoPointers1(int[] nums) {
     int[] res = new int[nums.length];
     int left = 0;
     int right = nums.length - 1;
@@ -142,7 +172,25 @@ public int[] sortedSquares(int[] nums) {
             right--;
         }
     }
-    
+
+    return res;
+}
+
+public int[] twoPointers2(int[] nums) {
+    int[] res = new int[nums.length];
+
+    for (int idx = nums.length - 1, left = 0, right = nums.length - 1; left <= right;) {
+        int square_of_left = nums[left] * nums[left];
+        int square_of_right = nums[right] * nums[right];
+        if (square_of_left > square_of_right) {
+            res[idx--] = square_of_left;
+            left++;
+        } else {
+            res[idx--] = square_of_right;
+            right--;
+        }
+    }
+
     return res;
 }
 ```

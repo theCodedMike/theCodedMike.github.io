@@ -2,7 +2,7 @@
 title: 26, Remove Duplicates from Sorted Array
 icon: discover
 date: 2023-10-06
-order: 5
+order: 7
 sticky: true
 category: array
 tag: 

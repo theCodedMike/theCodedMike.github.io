@@ -32,13 +32,14 @@ assert_eq(nums[6], xx); // ERROR，index out of bounds
 
 
 ### Remove Element
+[27: Remove Element](27_remove_element.md)
 [26: Remove Duplicates from Sorted Array](26_remove_duplicates_from_sorted_array.md)
 [283: Move Zeroes](283_move_zeroes.md)
 [844: Backspace String Compare](844_backspace_string_compare.md)
-[977: Squares of a Sorted Array](977_squares_of_a_sorted_array.md)
 
 
 ### Square of Ordered Arrays
+[977: Squares of a Sorted Array](977_squares_of_a_sorted_array.md)
 
 
 ### Subarray with the Smallest Length
