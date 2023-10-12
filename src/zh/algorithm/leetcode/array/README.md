@@ -40,9 +40,12 @@ assert_eq(nums[6], xx); // ERROR，index out of bounds
 [977: 有序数组的平方](977_squares_of_a_sorted_array.md)
 
 ### 长度最小的子数组
+[209: 长度最小的子数组](209_minimum_size_subarray_sum.md)
+[904: 水果成篮](904_fruit_into_baskets.md)
+[76: 最小覆盖子串](76_minimum_window_substring.md)
 
-
-### 螺旋矩阵II
-
+### 螺旋矩阵
+[54: 螺旋矩阵](54_spiral_matrix.md)
+[59: 螺旋矩阵II](59_spiral_matrix_ii.md)
 
 ## 总结

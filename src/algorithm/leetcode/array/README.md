@@ -42,11 +42,15 @@ assert_eq(nums[6], xx); // ERROR，index out of bounds
 [977: Squares of a Sorted Array](977_squares_of_a_sorted_array.md)
 
 
-### Subarray with the Smallest Length
+### Minimum Size Subarray Sum
+[209: Minimum Size Subarray Sum](209_minimum_size_subarray_sum.md)
+[904: Fruit Into Baskets](904_fruit_into_baskets.md)
+[76: Minimum Window Substring](76_minimum_window_substring.md)
 
 
-### Spiral Matrix II
-
+### Spiral Matrix
+[54: Spiral Matrix](54_spiral_matrix.md)
+[59: Spiral Matrix II](59_spiral_matrix_ii.md)
 
 
 ## Summary
