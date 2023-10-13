@@ -164,7 +164,7 @@ public int minSubArrayLen(int target, int[] nums) {
 ```
 :::
 
-### Approach 3: Two Pointers
+### Approach 3: Sliding Window
 ::: code-tabs
 @tab Rust
 ```rust

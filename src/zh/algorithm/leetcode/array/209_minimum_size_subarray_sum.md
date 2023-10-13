@@ -167,7 +167,7 @@ public int minSubArrayLen(int target, int[] nums) {
 :::
 
 
-### 方法 3: 双指针
+### 方法 3: 滑动窗口
 ::: code-tabs
 @tab Rust
 ```rust
