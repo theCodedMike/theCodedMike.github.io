@@ -16,13 +16,13 @@ tag:
 Given an m x n matrix, return all elements of the matrix in spiral order.
 
 **Example 1**
-![3x3](../../../assets/3_x_3_matrix.png)
-Input: matrix = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
+![3x3](../../../../assets/leetcode/3_x_3_matrix.png)
+Input: matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 Output: [1, 2, 3, 6, 9, 8, 7, 4, 5]
 
 **Example 2**
-![3x4](../../../assets/3_x_4_matrix.png)
-Input: matrix = [[1, 2, 3, 4],[5, 6, 7, 8],[9, 10, 11, 12]]
+![3x4](../../../../assets/leetcode/3_x_4_matrix.png)
+Input: matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
 Output: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
 
 **Constraints**
