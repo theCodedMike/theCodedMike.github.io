@@ -6,11 +6,12 @@ dir:
   order: 1
 category: leetcode
 tag: array
-sticky: true
+sticky: false
 ---
 
 ## About Array
 When memory is allocated for an array, its individual elements are adjacent, so we can access it by index.
+![Array Memory Allocation](../../../../assets/leetcode/array_memory_allocation.jpg)
 
 ```text
 let nums = [10, 11, 12, 13, 14, 15];
@@ -23,6 +24,7 @@ assert_eq(nums[5], 15);
 assert_eq(nums[6], xx); // ERROR，index out of bounds
 ```
 
+## Exercise
 ### Binary Search
 [704: Binary Search](704_binary_search.md)
 [35: Search Insert Position](35_search_insert_position.md)

@@ -16,12 +16,12 @@ tag:
 Given an m x n matrix, return all elements of the matrix in spiral order.
 
 **Example 1**
-![3x3](../../../../assets/leetcode/3_x_3_matrix.png)
+![3x3](../../../../assets/leetcode/3_x_3_matrix_54.png)
 Input: matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 Output: [1, 2, 3, 6, 9, 8, 7, 4, 5]
 
 **Example 2**
-![3x4](../../../../assets/leetcode/3_x_4_matrix.png)
+![3x4](../../../../assets/leetcode/3_x_4_matrix_54.png)
 Input: matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
 Output: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
 
@@ -30,7 +30,7 @@ Output: [1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
 - m == matrix.length
 - n == matrix[i].length
 - 1 <= m, n <= 10
-- -100 <= matrix[i][j] <= 100
+- -100 <= matrix[m][n] <= 100
 
 **Related Topics**
 

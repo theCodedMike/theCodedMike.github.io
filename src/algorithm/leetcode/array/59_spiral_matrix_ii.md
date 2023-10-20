@@ -16,7 +16,7 @@ tag:
 Given a positive integer n, generate an `n x n` matrix filled with elements from `1 to n²` in spiral order.
 
 **Example 1:**
-![3x3](../../../../assets/leetcode/gen_3_x_3_matrix.png)
+![3x3](../../../../assets/leetcode/gen_3_x_3_matrix_59.png)
 Input: n = 3
 Output: [[1, 2, 3], [8, 9, 4], [7, 6, 5]]
 
