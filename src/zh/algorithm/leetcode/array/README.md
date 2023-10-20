@@ -11,7 +11,7 @@ sticky: false
 
 ## 数组的理论知识
 当给数组分配内存时，数组中的各个元素是相邻的，所以可以通过下标来访问其中的某个元素。
-![Array Memory Allocation](../../../../assets/leetcode/array_memory_allocation.jpg)
+![Array Memory Allocation](../../../../../assets/leetcode/array_memory_allocation.jpg)
 
 ```text
 let nums = [10, 11, 12, 13, 14, 15];

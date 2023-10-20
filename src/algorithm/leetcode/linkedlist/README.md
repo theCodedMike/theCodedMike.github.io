@@ -39,7 +39,7 @@ The nodes in a linked list are not continuously distributed in memory, but are s
 
 ## Exercise
 ### Remove Linked List Elements
-[203: Remove Linked List Elements]
+[203: Remove Linked List Elements](203_remove_linked_list_elements.md)
 
 ### Design Linked List
 [707: Design Linked List]
