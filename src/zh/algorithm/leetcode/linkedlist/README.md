@@ -39,10 +39,10 @@ sticky: false
 
 ## 习题
 ### 移除链表元素
-[203: 移除链表元素]
+[203: 移除链表元素](203_remove_linked_list_elements.md)
 
 ### 设计链表
-[707: 设计链表]
+[707: 设计链表](707_design_linked_list.md)
 
 ### 反转链表
 [206: 反转链表]

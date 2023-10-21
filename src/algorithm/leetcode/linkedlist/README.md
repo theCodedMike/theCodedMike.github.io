@@ -42,7 +42,7 @@ The nodes in a linked list are not continuously distributed in memory, but are s
 [203: Remove Linked List Elements](203_remove_linked_list_elements.md)
 
 ### Design Linked List
-[707: Design Linked List]
+[707: Design Linked List](707_design_linked_list.md)
 
 ### Reverse Linked List
 [206: Reverse Linked List]
