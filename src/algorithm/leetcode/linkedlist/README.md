@@ -45,7 +45,7 @@ The nodes in a linked list are not continuously distributed in memory, but are s
 [707: Design Linked List](707_design_linked_list.md)
 
 ### Reverse Linked List
-[206: Reverse Linked List]
+[206: Reverse Linked List](206_reverse_linked_list.md)
 
 ### Swap Nodes in Pairs
 [24: Swap Nodes in Pairs]

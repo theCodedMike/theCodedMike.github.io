@@ -45,7 +45,7 @@ sticky: false
 [707: 设计链表](707_design_linked_list.md)
 
 ### 反转链表
-[206: 反转链表]
+[206: 反转链表](206_reverse_linked_list.md)
 
 ### 两两交换链表中的节点
 [24: 两两交换链表中的节点]
