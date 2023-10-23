@@ -48,7 +48,7 @@ The nodes in a linked list are not continuously distributed in memory, but are s
 [206: Reverse Linked List](206_reverse_linked_list.md)
 
 ### Swap Nodes in Pairs
-[24: Swap Nodes in Pairs]
+[24: Swap Nodes in Pairs](24_swap_nodes_in_pairs.md)
 
 ### Remove Nth Node From End of List
 [19: Remove Nth Node From End of List]
