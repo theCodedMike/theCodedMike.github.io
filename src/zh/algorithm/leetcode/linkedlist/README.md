@@ -51,7 +51,7 @@ sticky: false
 [24: 两两交换链表中的节点](24_swap_nodes_in_pairs.md)
 
 ### 删除链表的倒数第N个节点
-[19: 删除链表的倒数第N个节点]
+[19: 删除链表的倒数第N个节点](19_remove_nth_node_from_end_of_list.md)
 
 ### 链表相交
 [160: 链表相交]
