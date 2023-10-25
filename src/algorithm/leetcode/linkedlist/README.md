@@ -54,7 +54,7 @@ The nodes in a linked list are not continuously distributed in memory, but are s
 [19: Remove Nth Node From End of List](19_remove_nth_node_from_end_of_list.md)
 
 ### Intersection of Two Linked Lists
-[160: Intersection of Two Linked Lists]
+[160: Intersection of Two Linked Lists](160_intersection_of_two_linked_lists.md)
 
 ### Linked List Cycle
 [141: Linked List Cycle]

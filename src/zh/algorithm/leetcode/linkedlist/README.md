@@ -54,7 +54,7 @@ sticky: false
 [19: 删除链表的倒数第N个节点](19_remove_nth_node_from_end_of_list.md)
 
 ### 链表相交
-[160: 链表相交]
+[160: 链表相交](160_intersection_of_two_linked_lists.md)
 
 ### 环形链表
 [141: 环形链表]
