@@ -57,7 +57,7 @@ sticky: false
 [160: 链表相交](160_intersection_of_two_linked_lists.md)
 
 ### 环形链表
-[141: 环形链表]
+[141: 环形链表](141_linked_list_cycle.md)
 [142: 环形链表II]
 
 
