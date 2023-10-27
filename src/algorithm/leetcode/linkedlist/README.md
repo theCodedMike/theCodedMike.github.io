@@ -58,7 +58,7 @@ The nodes in a linked list are not continuously distributed in memory, but are s
 
 ### Linked List Cycle
 [141: Linked List Cycle](141_linked_list_cycle.md)
-[142: Linked List Cycle II]
+[142: Linked List Cycle II](142_linked_list_cycle_II.md)
 
 
 ## Summary

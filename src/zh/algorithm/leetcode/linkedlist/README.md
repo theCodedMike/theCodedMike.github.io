@@ -58,7 +58,7 @@ sticky: false
 
 ### 环形链表
 [141: 环形链表](141_linked_list_cycle.md)
-[142: 环形链表II]
+[142: 环形链表II](142_linked_list_cycle_II.md)
 
 
 ## 总结
