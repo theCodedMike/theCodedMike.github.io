@@ -46,8 +46,8 @@ The performance of the hash table deteriorates in relation to the load factor a.
 ## Exercise
 ### Valid Anagram
 [242: Valid Anagram](242_valid_anagram.md)
-[383: Ransom Note](383_Ransom%20Note.md)
-[49: Group Anagrams]
+[383: Ransom Note](383_ransom_note.md)
+[49: Group Anagrams](49_group_anagrams.md)
 [438: Find All Anagrams in a String]
 
 ### Intersection of Two Arrays
