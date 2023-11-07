@@ -51,7 +51,7 @@ The performance of the hash table deteriorates in relation to the load factor a.
 [438: Find All Anagrams in a String](438_find_all_anagrams_in_a_string.md)
 
 ### Intersection of Two Arrays
-[349: Intersection of Two Arrays]
+[349: Intersection of Two Arrays](349_intersection_of_two_arrays.md)
 [350: Intersection of Two Arrays II]
 
 ### Happy Number
