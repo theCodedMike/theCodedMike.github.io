@@ -48,7 +48,7 @@ a是散列表装满程度的标志因子。由于表长是定值，a与"填入�
 
 ### 两个数组的交集
 [349: 两个数组的交集](349_intersection_of_two_arrays.md)
-[350: 两个数组的交集II]
+[350: 两个数组的交集II](350_intersection_of_two_arrays_ii.md)
 
 ### 快乐数
 [202: 快乐数]
