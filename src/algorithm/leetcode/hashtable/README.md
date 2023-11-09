@@ -55,7 +55,7 @@ The performance of the hash table deteriorates in relation to the load factor a.
 [350: Intersection of Two Arrays II](350_intersection_of_two_arrays_ii.md)
 
 ### Happy Number
-[202: Happy Number]
+[202: Happy Number](202_happy_number.md)
 
 ### Two Sum
 [1: Two Sum]
