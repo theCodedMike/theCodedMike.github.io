@@ -58,7 +58,7 @@ The performance of the hash table deteriorates in relation to the load factor a.
 [202: Happy Number](202_happy_number.md)
 
 ### Two Sum
-[1: Two Sum]
+[1: Two Sum](1_two_sum.md)
 
 ### Three Sum
 [15: Three Sum]
