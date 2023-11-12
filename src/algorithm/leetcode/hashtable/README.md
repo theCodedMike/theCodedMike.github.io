@@ -62,7 +62,7 @@ The performance of the hash table deteriorates in relation to the load factor a.
 
 ### Three Sum
 [15: Three Sum](15_three_sum.md)
-[16: Three Sum Closest]
+[16: Three Sum Closest](16_three_sum_closest.md)
 
 ### Four Sum
 [18: Four Sum]
