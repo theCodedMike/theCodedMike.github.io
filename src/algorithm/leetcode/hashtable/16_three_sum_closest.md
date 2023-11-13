@@ -44,6 +44,9 @@ Explanation: The sum that is closest to the target is 0. (0 + 0 + 0 = 0).
 ::: code-tabs
 @tab Rust
 ```rust
+/// Time Complexity: O(n^2*log(n))
+///
+/// Space Complexity: O(n)
 pub fn three_sum_closest(nums: Vec<i32>, target: i32) -> i32 {
     let len = nums.len();
     nums.sort_unstable();
@@ -90,6 +93,9 @@ pub fn three_sum_closest(nums: Vec<i32>, target: i32) -> i32 {
 
 @tab Java
 ```java
+// Time Complexity: O(n^2*log(n))
+//
+// Space Complexity: O(n)
 public int threeSumClosest(int[] nums, int target) {
     Arrays.sort(nums);
     int best = Integer.MAX_VALUE / 2;
@@ -131,6 +137,9 @@ public int threeSumClosest(int[] nums, int target) {
 ::: code-tabs
 @tab Rust
 ```rust
+/// Time Complexity: O(n^2)
+///
+/// Space Complexity: O(n)
 pub fn three_sum_closest(nums: Vec<i32>, target: i32) -> i32 {
     let len = nums.len();
     nums.sort_unstable();
@@ -164,6 +173,9 @@ pub fn three_sum_closest(nums: Vec<i32>, target: i32) -> i32 {
 
 @tab Java
 ```java
+// Time Complexity: O(n^2)
+//
+// Space Complexity: O(n)
 public int threeSumClosest(int[] nums, int target) {
     Arrays.sort(nums);
     int best = Integer.MAX_VALUE / 2;
