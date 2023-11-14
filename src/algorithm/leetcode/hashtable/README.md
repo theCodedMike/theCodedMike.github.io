@@ -66,6 +66,6 @@ The performance of the hash table deteriorates in relation to the load factor a.
 
 ### Four Sum
 [18: Four Sum](18_four_sum.md)
-[454: Four Sum II]
+[454: Four Sum II](454_four_sum_ii.md)
 
 ## Summary
