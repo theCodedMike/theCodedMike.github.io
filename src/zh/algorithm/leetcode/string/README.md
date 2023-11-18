@@ -16,7 +16,7 @@ sticky: false
 ## 习题
 ### 反转字符串
 [344: 反转字符串](344_reverse_string.md)
-[541: 反转字符串II]
+[541: 反转字符串II](541_reverse_string_ii.md)
 
 ### 替换数字
 [carl: 替换数字]

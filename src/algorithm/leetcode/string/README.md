@@ -16,7 +16,7 @@ In computer programming, a **string** is traditionally a sequence of characters,
 ## Exercise
 ### Reverse String
 [344: Reverse String](344_reverse_string.md)
-[541: Reverse String II]
+[541: Reverse String II](541_reverse_string_ii.md)
 
 ### Replace Numbers
 [carl: Replace Numbers]
