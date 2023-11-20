@@ -19,7 +19,7 @@ In computer programming, a **string** is traditionally a sequence of characters,
 [541: Reverse String II](541_reverse_string_ii.md)
 
 ### Replace Numbers
-[carl: Replace Numbers]
+[KamaCoder 54: Replace Numbers](kamacoder_54_replace_numbers.md)
 
 ### Reverse Words in s String
 [151: Reverse words in a String]

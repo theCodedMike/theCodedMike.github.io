@@ -19,7 +19,7 @@ sticky: false
 [541: 反转字符串II](541_reverse_string_ii.md)
 
 ### 替换数字
-[carl: 替换数字]
+[卡码网54: 替换数字](kamacoder_54_replace_numbers.md)
 
 ### 翻转字符串里的单词
 [151: 翻转字符串里的单词]
