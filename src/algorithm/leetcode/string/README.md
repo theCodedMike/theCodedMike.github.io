@@ -22,7 +22,7 @@ In computer programming, a **string** is traditionally a sequence of characters,
 [KamaCoder 54: Replace Numbers](kamacoder_54_replace_numbers.md)
 
 ### Reverse Words in s String
-[151: Reverse words in a String]
+[151: Reverse words in a String](151_reverse_words_in_a_string.md)
 
 ### Right-Rotated String
 [carl: Right-Rotated String]

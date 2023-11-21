@@ -22,7 +22,7 @@ sticky: false
 [卡码网54: 替换数字](kamacoder_54_replace_numbers.md)
 
 ### 翻转字符串里的单词
-[151: 翻转字符串里的单词]
+[151: 翻转字符串里的单词](151_reverse_words_in_a_string.md)
 
 ### 右旋字符串
 [carl: 右旋字符串]
