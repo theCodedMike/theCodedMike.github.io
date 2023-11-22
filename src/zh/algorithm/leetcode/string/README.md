@@ -1,5 +1,5 @@
 ---
-title: String
+title: 字符串
 icon: discover
 date: 2023-11-16
 dir:
@@ -25,7 +25,7 @@ sticky: false
 [151: 翻转字符串里的单词](151_reverse_words_in_a_string.md)
 
 ### 右旋字符串
-[carl: 右旋字符串]
+[卡码网55: 右旋字符串](kamacoder_55_right_rotated_string.md)
 
 ### 找出字符串中第一个匹配项的下标
 [28: 找出字符串中第一个匹配项的下标]

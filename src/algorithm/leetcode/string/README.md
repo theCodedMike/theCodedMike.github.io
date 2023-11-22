@@ -25,7 +25,7 @@ In computer programming, a **string** is traditionally a sequence of characters,
 [151: Reverse words in a String](151_reverse_words_in_a_string.md)
 
 ### Right-Rotated String
-[carl: Right-Rotated String]
+[KamaCoder 55: Right-Rotated String](kamacoder_55_right_rotated_string.md)
 
 ### Find the Index of the First Occurrence in a String
 [28: Find the Index of the First Occurrence in a String]
