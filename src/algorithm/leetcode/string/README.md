@@ -28,7 +28,7 @@ In computer programming, a **string** is traditionally a sequence of characters,
 [KamaCoder 55: Right-Rotated String](kamacoder_55_right_rotated_string.md)
 
 ### Find the Index of the First Occurrence in a String
-[28: Find the Index of the First Occurrence in a String]
+[28: Find the Index of the First Occurrence in a String](28_find_the_index_of_the_first_occurrence_in_a_string.md)
 
 ### Repeated Substring Pattern
 [459: Repeated Substring Pattern]

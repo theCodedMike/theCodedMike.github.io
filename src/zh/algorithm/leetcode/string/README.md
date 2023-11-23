@@ -28,7 +28,7 @@ sticky: false
 [卡码网55: 右旋字符串](kamacoder_55_right_rotated_string.md)
 
 ### 找出字符串中第一个匹配项的下标
-[28: 找出字符串中第一个匹配项的下标]
+[28: 找出字符串中第一个匹配项的下标](28_find_the_index_of_the_first_occurrence_in_a_string.md)
 
 ### 重复的子字符串
 [459: 重复的子字符串]
