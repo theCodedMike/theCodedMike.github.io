@@ -31,6 +31,6 @@ sticky: false
 [28: 找出字符串中第一个匹配项的下标](28_find_the_index_of_the_first_occurrence_in_a_string.md)
 
 ### 重复的子字符串
-[459: 重复的子字符串]
+[459: 重复的子字符串](459_repeated_substring_pattern.md)
 
 ## 总结

@@ -31,6 +31,6 @@ In computer programming, a **string** is traditionally a sequence of characters,
 [28: Find the Index of the First Occurrence in a String](28_find_the_index_of_the_first_occurrence_in_a_string.md)
 
 ### Repeated Substring Pattern
-[459: Repeated Substring Pattern]
+[459: Repeated Substring Pattern](459_repeated_substring_pattern.md)
 
 ## Summary

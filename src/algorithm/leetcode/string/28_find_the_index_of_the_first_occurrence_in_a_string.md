@@ -40,27 +40,26 @@ Explanation: `"leeto"` did not occur in `"leetcode"`, so we return `-1`.
 ::: code-tabs
 @tab Rust
 ```rust
+/// Time Complexity: O(m * n)
+///
+/// Space Complexity: O(1)
 pub fn str_str(haystack: String, needle: String) -> i32 {
     let m = needle.len();
     let n = haystack.len();
-    let mut start = 0;
-    let mut end = m;
     let needle = needle.as_bytes();
+    let haystack = haystack.as_bytes();
 
-    while end <= n {
-        let sub = haystack.index(start..end).as_bytes();
+    for end in m..=n {
         let mut all_equal = true;
-        for i in 0..m {
-            if needle[i] != sub[i] {
+        for i in end - m..end {
+            if haystack[i] != needle[i - end + m] {
                 all_equal = false;
                 break;
             }
         }
         if all_equal {
-            return start as i32;
+            return (end - m) as i32;
         }
-        start += 1;
-        end = start + m;
     }
 
     -1
@@ -69,25 +68,24 @@ pub fn str_str(haystack: String, needle: String) -> i32 {
 
 @tab Java
 ```java
+// Time Complexity: O(m * n)
+//
+// Space Complexity: O(1)
 public int strStr(String haystack, String needle) {
     int n = haystack.length();
     int m = needle.length();
-    int start = 0;
-    int end = m;
 
-    while (end <= n) {
+    for (int end = m; end <= n; end++) {
         boolean allEqual = true;
-        for (int i = start; i < end; i++) {
-            if (haystack.charAt(i) != needle.charAt(i - start)) {
+        for (int i = end - m; i < end; i++) {
+            if (haystack.charAt(i) != needle.charAt(i - end + m)) {
                 allEqual = false;
                 break;
             }
         }
         if (allEqual) {
-            return start;
+            return end - m;
         }
-        start++;
-        end = start + m;
     }
 
     return -1;
@@ -99,27 +97,37 @@ public int strStr(String haystack, String needle) {
 ::: code-tabs
 @tab Rust
 ```rust
+/// Time Complexity: O(m + n)
+///
+/// Space Complexity: O(m)
 pub fn str_str(haystack: String, needle: String) -> i32 {
-    let m = needle.len();
-    let mut pi = vec![0; m];
-    let mut j = 0;
-    let needle = needle.as_bytes();
-    for i in 1..m {
-        while j > 0 && needle[i] != needle[j] {
-            j = pi[j - 1];
-        }
-        if needle[i] == needle[j] {
-            j += 1;
-        }
-        pi[i] = j;
-    }
+    let get_next = |needle: &[u8]| -> Vec<usize> {
+        let m = needle.len();
+        let mut next = vec![0; m];
+        let mut j = 0;
 
+        for i in 1..m {
+            while j > 0 && needle[i] != needle[j] {
+                j = next[j - 1];
+            }
+            if needle[i] == needle[j] {
+                j += 1;
+            }
+            next[i] = j;
+        }
+
+        next
+    };
+
+    let needle = needle.as_bytes();
+    let next = get_next(needle);
+    let m = needle.len();
     let n = haystack.len();
     let haystack = haystack.as_bytes();
-    j = 0;
+    let mut j = 0;
     for i in 0..n {
         while j > 0 && haystack[i] != needle[j] {
-            j = pi[j - 1];
+            j = next[j - 1];
         }
         if haystack[i] == needle[j] {
             j += 1;
@@ -135,23 +143,34 @@ pub fn str_str(haystack: String, needle: String) -> i32 {
 
 @tab Java
 ```java
-public int strStr(String haystack, String needle) {
+Function<String, int[]> getNext = (needle) -> {
     int m = needle.length();
-    int[] pi = new int[m];
+    int[] next = new int[m];
+
     for (int i = 1, j = 0; i < m; i++) {
         while (j > 0 && needle.charAt(i) != needle.charAt(j)) {
-            j = pi[j - 1];
+            j = next[j - 1];
         }
         if (needle.charAt(i) == needle.charAt(j)) {
             j++;
         }
-        pi[i] = j;
+        next[i] = j;
     }
+    
+    return next;
+};
 
+// Time Complexity: O(m + n)
+//
+// Space Complexity: O(m)
+public int strStr(String haystack, String needle) {
+    int[] next = this.getNext.apply(needle);
     int n = haystack.length();
+    int m = needle.length();
+    
     for (int i = 0, j = 0; i < n; i++) {
         while (j > 0 && haystack.charAt(i) != needle.charAt(j)) {
-            j = pi[j - 1];
+            j = next[j - 1];
         }
         if (haystack.charAt(i) == needle.charAt(j)) {
             j++;
