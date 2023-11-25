@@ -15,7 +15,7 @@ category: leetcode
 
 ### [字符串](./string/README.md)
 
-### [双指针](./double_pointer/README.md)
+### [双指针](./two_pointers/README.md)
 
 ### [栈/队列](./stack_queue/README.md)
 

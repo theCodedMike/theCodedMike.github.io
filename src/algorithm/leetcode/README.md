@@ -15,7 +15,7 @@ category: leetcode
 
 ### [String](./string/README.md)
 
-### [Double Pointer](./double_pointer/README.md)
+### [Two Pointers](./two_pointers/README.md)
 
 ### [Stack/Queue](./stack_queue/README.md)
 
