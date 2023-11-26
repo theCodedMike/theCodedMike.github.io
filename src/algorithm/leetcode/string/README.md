@@ -9,7 +9,7 @@ tag: string
 sticky: false
 ---
 
-## About String
+## String
 ![string](../../../../assets/leetcode/string.png)
 In computer programming, a **string** is traditionally a sequence of characters, either as a literal constant or as some kind of variable.
 
