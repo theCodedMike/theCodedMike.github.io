@@ -39,10 +39,10 @@ Queues provide services in computer science, transport, and operations research 
 
 
 ## Exercise
-[232: Implement Queue using Stacks Easy]
-[225: Implement Stack using Queues Easy]
-[20: Valid Parentheses Easy]
-[1047: Remove All Adjacent Duplicates In String Easy]
+[232: Implement Queue using Stacks](232_implement_queue_using_stacks.md)
+[225: Implement Stack using Queues]
+[20: Valid Parentheses]
+[1047: Remove All Adjacent Duplicates In String]
 [150: Evaluate Reverse Polish Notation]
 [239: Sliding Window Maximum]
 [347: Top K Frequent Elements]
