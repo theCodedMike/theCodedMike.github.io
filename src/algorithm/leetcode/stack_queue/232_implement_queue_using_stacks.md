@@ -59,13 +59,13 @@ Can you implement the queue such that each operation is [**amortized**][Amortize
 ::: code-tabs
 @tab Rust
 ```rust
-struct MyQueue {
+pub struct MyQueue {
     s1: Vec<i32>,
     s2: Vec<i32>,
 }
 
 impl MyQueue {
-    fn new() -> Self {
+    pub fn new() -> Self {
         MyQueue {
             s1: vec![],
             s2: vec![],
@@ -76,9 +76,9 @@ impl MyQueue {
 
 @tab Java
 ```java
-class MyQueue {
-    Deque<Integer> s1;
-    Deque<Integer> s2;
+public class MyQueue {
+    private Deque<Integer> s1;
+    private Deque<Integer> s2;
 
     public MyQueue() {
         this.s1 = new ArrayDeque<>();
@@ -96,7 +96,7 @@ impl MyQueue {
     /// Time Complexity: O(n)
     ///
     /// Space Complexity: O(n)
-    fn push(&mut self, x: i32) {
+    pub fn push(&mut self, x: i32) {
         while let Some(val) = self.s1.pop() {
             self.s2.push(val);
         }
@@ -109,21 +109,21 @@ impl MyQueue {
     /// Time Complexity: O(1)
     ///
     /// Space Complexity: O(1)
-    fn pop(&mut self) -> i32 {
+    pub fn pop(&mut self) -> i32 {
         self.s1.pop().unwrap()
     }
 
     /// Time Complexity: O(1)
     ///
     /// Space Complexity: O(1)
-    fn peek(&mut self) -> i32 {
+    pub fn peek(&mut self) -> i32 {
         *self.s1.last().unwrap()
     }
 
     /// Time Complexity: O(1)
     ///
     /// Space Complexity: O(1)
-    fn empty(&self) -> bool {
+    pub fn empty(&self) -> bool {
         self.s1.is_empty()
     }
 }
@@ -177,14 +177,14 @@ impl MyQueue {
     /// Time Complexity: O(1)
     ///
     /// Space Complexity: O(n)
-    fn push(&mut self, x: i32) {
+    pub fn push(&mut self, x: i32) {
         self.s1.push(x);
     }
 
     /// Time Complexity: Amortized O(1), Worst-case O(n)
     ///
     /// Space Complexity: O(1)
-    fn pop(&mut self) -> i32 {
+    pub fn pop(&mut self) -> i32 {
         if self.s2.is_empty() {
             while let Some(val) = self.s1.pop() {
                 self.s2.push(val);
@@ -196,7 +196,7 @@ impl MyQueue {
     /// Time Complexity: O(1)
     ///
     /// Space Complexity: O(1)
-    fn peek(&mut self) -> i32 {
+    pub fn peek(&mut self) -> i32 {
         if self.s2.is_empty() {
             *self.s1.first().unwrap()
         } else {
@@ -207,7 +207,7 @@ impl MyQueue {
     /// Time Complexity: O(1)
     ///
     /// Space Complexity: O(1)
-    fn empty(&self) -> bool {
+    pub fn empty(&self) -> bool {
         self.s1.is_empty() && self.s2.is_empty()
     }
 }
