@@ -37,7 +37,7 @@ sticky: false
 [232: 用栈实现队列](232_implement_queue_using_stacks.md)
 [225: 用队列实现栈](225_implement_stack_using_queues.md)
 [20: 有效的括号](20_valid_parentheses.md)
-[1047: 删除字符串中的所有相邻重复项]
+[1047: 删除字符串中的所有相邻重复项](1047_remove_all_adjacent_duplicates_in_string.md)
 [150: 逆波兰表达式求值]
 [239: 滑动窗口最大值]
 [347: 前K个高频元素]
