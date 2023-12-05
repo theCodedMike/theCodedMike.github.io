@@ -29,11 +29,22 @@ From a graph theory perspective, binary trees as defined here are **arborescence
 3. **Complete Binary Tree**: A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all nodes in the last level are as far left as possible. It can have between 1 and 2^h nodes at the last level h. A perfect tree is therefore always complete but a complete tree is not always perfect.
 ![complete binary tree, not full binary tree](../../../../assets/leetcode/complete_binary_tree.png)
 
-4. **Balanced Binary Tree**: A balanced binary tree is a binary tree structure in which the left and right subtrees of every node differ in height (the number of edges from the top-most node to the farthest node in a subtree) by no more than 1.
+4. **Degenerate Tree**: A degenerate (or **pathological**) tree is where each parent node has only one associated child node. This means that the tree will behave like a linked list data structure.
+![degenerate tree](../../../../assets/leetcode/degenerate_tree.png)
+
+5. [**Binary Search Tree**][BST]: an ordered or sorted binary tree, is a rooted binary tree data structure with the key of each internal node being greater than all the keys in the respective node's left subtree and less than the ones in its right subtree.
+![BST](../../../../assets/leetcode/bst.png)
+
+6. [**AVL**][AVL]: an AVL tree (named after inventors Adelson-Velsky and Landis) is a **self-balancing binary search tree**. In an AVL tree, the heights of the two child subtrees of any node differ by at most one; if at any time they differ by more than one, **rebalancing** is done to restore this property.
 ![AVL](../../../../assets/leetcode/avl.png)
 
-5. **Degenerate Tree**: A degenerate (or **pathological**) tree is where each parent node has only one associated child node. This means that the tree will behave like a linked list data structure.
-![degenerate tree](../../../../assets/leetcode/degenerate_tree.png)
+7. [**Red Black Tree**][RBT]: a red–black tree is a specialised binary search tree, compared to other self-balancing binary search trees, the nodes in a red-black tree hold an extra bit called "color" representing "red" and "black" which is used when re-organising the tree to ensure that it is always approximately balanced. It has the following properties:
+   - Every node is either red or black.
+   - All NIL nodes are considered black.
+   - A red node does not have a red child.
+   - Every path from a given node to any of its descendant NIL nodes goes through the same number of black nodes.
+   - If a node N has exactly one child, it must be a red child.
+![RBT](../../../../assets/leetcode/rbt.png)
 
 ### Properties of Binary Trees
 - The number of nodes `n` in a full binary tree is at least `2ℎ + 1` and at most `2^(ℎ+1) − 1` (i.e., the number of nodes in a perfect binary tree), where `ℎ` is the height of the tree. A tree consisting of only a root node has a height of 0. For a perfect tree, the number of nodes is `1 + 2 + 4 + … + 2^ℎ = 2^(ℎ+1) − 1`.
@@ -174,6 +185,20 @@ procedure level_order(node)
 ```
 :::
 
+### Complexity in Big O Notation
+#### Time Complexity
+|Operation|Average|Worst case|
+|-|-|-|
+|Search|O(log(n))|O(n)|
+|Insert|O(log(n))|O(n)|
+|Delete|O(log(n))|O(n)|
+
+#### Space Complexity
+|Operation|Average|Worst case|
+|-|-|-|
+|Space|O(n)|O(n)|
+
+
 ## Exercise
 ### Traversal of Binary Trees
 [144: Binary Tree Pre-order Traversal]
@@ -224,3 +249,6 @@ procedure level_order(node)
 
 [binary_tree]: https://en.wikipedia.org/wiki/Binary_tree
 [k_ary_tree]: https://en.wikipedia.org/wiki/M-ary_tree
+[BST]: https://en.wikipedia.org/wiki/Binary_search_tree
+[AVL]: https://en.wikipedia.org/wiki/AVL_tree
+[RBT]: https://en.wikipedia.org/wiki/Red%E2%80%93black_tree
