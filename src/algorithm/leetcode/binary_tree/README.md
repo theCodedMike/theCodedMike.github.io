@@ -201,7 +201,7 @@ procedure level_order(node)
 
 ## Exercise
 ### Traversal of Binary Trees
-[144: Binary Tree Pre-order Traversal]
+[144: Binary Tree Pre-order Traversal](144_binary_tree_pre_order_traversal.md)
 [145: Binary Tree Post-order Traversal]
 [94: Binary Tree In-order Traversal]
 [102: Binary Tree Level Order Traversal]
