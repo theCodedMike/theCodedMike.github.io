@@ -203,26 +203,20 @@ fn iteration_impl_3(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
 fn iteration_impl_4(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     let mut res = vec![];
 
-    if root.is_some() {
-        let mut stack = vec![root];
-
-        while !stack.is_empty() {
-            match stack.pop().unwrap() {
-                Some(curr) => {
-                    if let Some(right) = curr.borrow_mut().right.take() {
-                        stack.push(Some(right)); // Right
+    if let Some(root) = root {
+        let mut stack = vec![Ok(root)];
+        while let Some(curr) = stack.pop() {
+            match curr {
+                Ok(node) => {
+                    if let Some(right) = node.borrow_mut().right.take() {
+                        stack.push(Ok(right));
                     }
-                    if let Some(left) = curr.borrow_mut().left.take() {
-                        stack.push(Some(left));  // Left
+                    if let Some(left) = node.borrow_mut().left.take() {
+                        stack.push(Ok(left));
                     }
-                    stack.push(Some(curr));      // Root
-                    stack.push(None);
+                    stack.push(Err(node.borrow().val));
                 }
-                None => {
-                    if let Some(curr) = stack.pop().unwrap() {
-                        res.push(curr.borrow().val);
-                    }
-                }
+                Err(val) => res.push(val),
             }
         }
     }
@@ -305,29 +299,27 @@ List<Integer> iterationImpl4(TreeNode root) {
     List<Integer> res = new ArrayList<>();
 
     if (root != null) {
-        Stack<TreeNode> stack = new Stack<>() {{
+        Deque<Object> stack = new ArrayDeque<>() {{
             this.push(root);
         }};
-
         while (!stack.isEmpty()) {
-            TreeNode curr = stack.pop();
-
-            if (curr != null) {
-                if (curr.right != null) {
-                    stack.push(curr.right);
+            Object curr = stack.pop();
+            switch (curr) {
+                case TreeNode node -> {
+                    if (node.right != null) {
+                        stack.push(node.right);
+                    }
+                    if (node.left != null) {
+                        stack.push(node.left);
+                    }
+                    stack.push(node.val);
                 }
-                if (curr.left != null) {
-                    stack.push(curr.left);
-                }
-                stack.push(curr);
-                stack.push(null); // Stack can push null, ArrayDeque can't.
-            } else {
-                TreeNode top = stack.pop();
-                res.add(top.val);
+                case Integer val -> res.add(val);
+                default -> throw new IllegalStateException("Unexpected value: " + curr);
             }
         }
     }
-
+    
     return res;
 }
 

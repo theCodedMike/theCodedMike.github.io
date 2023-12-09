@@ -204,8 +204,8 @@ procedure level_order(node)
 ## 习题
 ### 二叉树的遍历方式
 [144: 二叉树的前序遍历](144_binary_tree_pre_order_traversal.md)
+[94: 二叉树的中序遍历](94_binary_tree_in_order_traversal.md)
 [145: 二叉树的后序遍历]
-[94: 二叉树的中序遍历]
 [102: 二叉树的层序遍历]
 
 ### 二叉树的属性

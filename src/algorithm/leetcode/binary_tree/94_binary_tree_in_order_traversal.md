@@ -1,8 +1,8 @@
 ---
-title: 144, 二叉树的前序遍历
+title: 94, Binary Tree In-order Traversal
 icon: discover
-date: 2023-12-07
-order: 1
+date: 2023-12-09
+order: 2
 sticky: true
 category: binary tree
 tag: 
@@ -12,39 +12,38 @@ tag:
   - depth first search
 ---
 
-## 一、题目描述
-给你二叉树的根节点`root`，返回它节点值的**前序**遍历。
+## I Problem
+Given the `root` of a binary tree, return *the inorder traversal of its nodes' values*.
 
-**示例 1**
-![3 nodes](../../../../../assets/leetcode/3_nodes_144.png)
-输入: root = [1, null, 2, 3]
-输出: [1, 2, 3]
+**Example 1**
+![3 nodes](../../../../assets/leetcode/3_nodes_144.png)
+Input: root = [1, null, 2, 3]
+Output: [1, 3, 2]
 
-**示例 2**
-输入: root = []
-输出: []
+**Example 2**
+Input: root = []
+Output: []
 
-**示例 3**
-输入: root = [1]
-输出: [1]
+**Example 3**
+Input: root = [1]
+Output: [1]
 
-**提示**
-- 树中节点数目在范围`[0, 100]`内
+**Constraints**
+- The number of nodes in the tree is in the range `[0, 100]`
 - `-100 <= Node.val <= 100`
 
-**进阶**
-递归算法很简单，你可以通过迭代算法完成吗？
+**Follow up**
+Recursive solution is trivial, could you do it iteratively?
 
-**相关主题**
-- 栈
-- 树
-- 深度优先搜索
-- 二叉树
+**Related Topics**
+- Stack
+- Depth-First Search
+- Binary Tree
 
 
-## 二、题解
+## II Solution
 ::: code-tabs
-@tab Rust节点定义
+@tab Rust Node Definition
 ```rust
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -65,7 +64,7 @@ impl TreeNode {
 }
 ```
 
-@tab Java节点定义
+@tab Java Node Definition
 ```java
 public class TreeNode {
     int val;
@@ -83,25 +82,24 @@ public class TreeNode {
 ```
 :::
 
-### 方法 1: 递归
+### Approach 1: Recursion
 ::: code-tabs
 @tab Rust
 ```rust
-pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     let mut res = vec![];
-    const RECURSION_IMPL: fn(Option<Rc<RefCell<TreeNode>>>, &mut Vec<i32>) =
+    const RECURSION_IMPL: fn(root: Option<Rc<RefCell<TreeNode>>>, res: &mut Vec<i32>) =
         |root, res| match root {
             None => {}
-            Some(node) => {
-                res.push(node.borrow().val);                         // Root
-                RECURSION_IMPL(node.borrow_mut().left.take(), res);  // Left
-                RECURSION_IMPL(node.borrow_mut().right.take(), res); // Right
+            Some(root) => {
+                RECURSION_IMPL(root.borrow_mut().left.take(), res);
+                res.push(root.borrow().val);
+                RECURSION_IMPL(root.borrow_mut().right.take(), res);
             }
         };
 
     RECURSION_IMPL(root, &mut res);
-
-    res
+    return res;
 }
 ```
 
@@ -111,12 +109,12 @@ BiConsumer<TreeNode, List<Integer>> recursionImpl = (root, res) -> {
     if (root == null) {
         return;
     }
-    res.add(root.val);                          // Root
-    this.recursionImpl.accept(root.left, res);  // Left
-    this.recursionImpl.accept(root.right, res); // Right
+    this.recursionImpl.accept(root.left, res);
+    res.add(root.val);
+    this.recursionImpl.accept(root.right, res);
 };
 
-public List<Integer> preorderTraversal(TreeNode root) {
+public List<Integer> inorderTraversal(TreeNode root) {
     List<Integer> res = new ArrayList<>();
     this.recursionImpl.accept(root, res);
     return res;
@@ -124,35 +122,28 @@ public List<Integer> preorderTraversal(TreeNode root) {
 ```
 :::
 
-### 方法 2: 迭代
+### Approach 2: Iteration
 ::: code-tabs
 @tab Rust
 ```rust
-pub fn preorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    Self::iteration_impl_1(root)
+pub fn inorder_traversal(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    //Self::iteration_impl_1(root)
     //Self::iteration_impl_2(root)
-    //Self::iteration_impl_3(root)
-    //Self::iteration_impl_4(root)
+    Self::iteration_impl_3(root)
 }
 
-fn iteration_impl_1(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+fn iteration_impl_1(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     let mut res = vec![];
+    let mut stack = vec![];
 
-    if let Some(node) = root {
-        let mut stack = vec![node];
-
-        while !stack.is_empty() {
-            if let Some(curr) = stack.pop() {
-                res.push(curr.borrow().val);
-
-                if let Some(right) = curr.borrow_mut().right.take() {
-                    stack.push(right);
-                }
-
-                if let Some(left) = curr.borrow_mut().left.take() {
-                    stack.push(left);
-                }
-            }
+    while root.is_some() || !stack.is_empty() {
+        while let Some(curr) = root {
+            root = curr.borrow_mut().left.take();
+            stack.push(curr);
+        }
+        if let Some(curr) = stack.pop() {
+            res.push(curr.borrow().val);
+            root = curr.borrow_mut().right.take();
         }
     }
 
@@ -164,33 +155,14 @@ fn iteration_impl_2(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     let mut stack = vec![];
 
     while root.is_some() || !stack.is_empty() {
-        while let Some(curr) = root {
-            res.push(curr.borrow().val);
-            root = curr.borrow_mut().left.take();
-            stack.push(curr);
-        }
-
-        if let Some(curr) = stack.pop() {
-            root = curr.borrow_mut().right.take();
-        }
-    }
-
-    res
-}
-
-fn iteration_impl_3(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
-    let mut res = vec![];
-    let mut stack = vec![];
-
-    while root.is_some() || !stack.is_empty() {
         match root {
             Some(curr) => {
-                res.push(curr.borrow().val);
                 root = curr.borrow_mut().left.take();
                 stack.push(curr);
             }
             None => {
                 if let Some(curr) = stack.pop() {
+                    res.push(curr.borrow().val);
                     root = curr.borrow_mut().right.take();
                 }
             }
@@ -200,27 +172,27 @@ fn iteration_impl_3(mut root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     res
 }
 
-fn iteration_impl_4(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+fn iteration_impl_3(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
     let mut res = vec![];
-
+    
     if let Some(root) = root {
         let mut stack = vec![Ok(root)];
         while let Some(curr) = stack.pop() {
             match curr {
                 Ok(node) => {
                     if let Some(right) = node.borrow_mut().right.take() {
-                        stack.push(Ok(right));
+                        stack.push(Ok(right));          // Right
                     }
+                    stack.push(Err(node.borrow().val)); // Root
                     if let Some(left) = node.borrow_mut().left.take() {
-                        stack.push(Ok(left));
+                        stack.push(Ok(left));           // Left
                     }
-                    stack.push(Err(node.borrow().val));
                 }
                 Err(val) => res.push(val),
             }
         }
     }
-    
+
     res
 }
 
@@ -228,32 +200,24 @@ fn iteration_impl_4(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
 
 @tab Java
 ```java
-public List<Integer> preorderTraversal(TreeNode root) {
+public List<Integer> inorderTraversal(TreeNode root) {
     //return this.iterationImpl1(root);
     //return this.iterationImpl2(root);
-    //return this.iterationImpl3(root);
-    return this.iterationImpl4(root);
+    return this.iterationImpl3(root);
 }
 
 List<Integer> iterationImpl1(TreeNode root) {
     List<Integer> res = new ArrayList<>();
+    Deque<TreeNode> stack = new ArrayDeque<>();
 
-    if (root != null) {
-        Deque<TreeNode> stack = new ArrayDeque<>() {{
-            this.push(root);
-        }};
-
-        while (!stack.isEmpty()) {
-            TreeNode curr = stack.pop();
-            res.add(curr.val);
-
-            if (curr.right != null) {
-                stack.push(curr.right);
-            }
-            if (curr.left != null) {
-                stack.push(curr.left);
-            }
+    while (root != null || !stack.isEmpty()) {
+        while (root != null) {
+            stack.push(root);
+            root = root.left;
         }
+        TreeNode curr = stack.pop();
+        root = curr.right;
+        res.add(curr.val);
     }
 
     return res;
@@ -264,38 +228,20 @@ List<Integer> iterationImpl2(TreeNode root) {
     Deque<TreeNode> stack = new ArrayDeque<>();
 
     while (root != null || !stack.isEmpty()) {
-        while (root != null) {
-            res.add(root.val);
+        if (root != null) {
             stack.push(root);
             root = root.left;
+        } else {
+            TreeNode curr = stack.pop();
+            root = curr.right;
+            res.add(curr.val);
         }
-
-        TreeNode curr = stack.pop();
-        root = curr.right;
     }
 
     return res;
 }
 
 List<Integer> iterationImpl3(TreeNode root) {
-    List<Integer> res = new ArrayList<>();
-    Deque<TreeNode> stack = new ArrayDeque<>();
-
-    while (root != null || !stack.isEmpty()) {
-        if (root != null) {
-            res.add(root.val);
-            stack.push(root);
-            root = root.left;
-        } else {
-            TreeNode curr = stack.pop();
-            root = curr.right;
-        }
-    }
-
-    return res;
-}
-
-List<Integer> iterationImpl4(TreeNode root) {
     List<Integer> res = new ArrayList<>();
 
     if (root != null) {
@@ -309,17 +255,17 @@ List<Integer> iterationImpl4(TreeNode root) {
                     if (node.right != null) {
                         stack.push(node.right);
                     }
+                    stack.push(node.val);
                     if (node.left != null) {
                         stack.push(node.left);
                     }
-                    stack.push(node.val);
                 }
                 case Integer val -> res.add(val);
                 default -> throw new IllegalStateException("Unexpected value: " + curr);
             }
         }
     }
-    
+
     return res;
 }
 
