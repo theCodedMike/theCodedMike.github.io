@@ -203,7 +203,7 @@ procedure level_order(node)
 ### Traversal of Binary Trees
 [144: Binary Tree Pre-order Traversal](144_binary_tree_pre_order_traversal.md)
 [94: Binary Tree In-order Traversal](94_binary_tree_in_order_traversal.md)
-[145: Binary Tree Post-order Traversal]
+[145: Binary Tree Post-order Traversal](145_binary_tree_post_order_traversal.md)
 [102: Binary Tree Level Order Traversal]
 
 ### Properties of Binary Trees
