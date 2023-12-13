@@ -44,7 +44,7 @@ tag:
 
 ## 二、题解
 ::: code-tabs
-@tab Rust Node Definition
+@tab Rust节点定义
 ```rust
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -65,7 +65,7 @@ impl TreeNode {
 }
 ```
 
-@tab Java Node Definition
+@tab Java节点定义
 ```java
 public class TreeNode {
     int val;
