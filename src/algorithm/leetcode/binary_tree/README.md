@@ -210,7 +210,7 @@ procedure level_order(node)
 [107: Binary Tree Level Order Traversal II](107_binary_tree_level_order_traversal_ii.md)
 [199: Binary Tree Right Side View](199_binary_tree_right_side_view.md)
 [637: Average of Levels in Binary Tree](637_average_of_levels_in_binary_tree.md)
-[429: N-ary Tree Level Order Traversal]
+[429: N-ary Tree Level Order Traversal](429_n_ary_tree_level_order_traversal.md)
 [515: Find Largest Value in Each Tree Row]
 [116: Populating Next Right Pointers in Each Node]
 [117: Populating Next Right Pointers in Each Node II]
