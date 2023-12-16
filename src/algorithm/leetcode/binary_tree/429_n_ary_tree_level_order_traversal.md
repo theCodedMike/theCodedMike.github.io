@@ -59,7 +59,7 @@ impl Node {
     ///
     /// Node with children
     ///
-    pub fn new2(val: i32, children: Vec<Option<Rc<RefCell<Node>>>>) -> Option<Rc<RefCell<Node>>> {
+    pub fn new_with_children(val: i32, children: Vec<Option<Rc<RefCell<Node>>>>) -> Option<Rc<RefCell<Node>>> {
         Some(Rc::new(RefCell::new(Node {
             val,
             children: if children.is_empty() {
