@@ -214,7 +214,7 @@ procedure level_order(node)
 [637: 二叉树的层平均值](637_average_of_levels_in_binary_tree.md)
 [429: N叉树的层序遍历](429_n_ary_tree_level_order_traversal.md)
 [515: 在每个树行中找最大值](515_find_largest_value_in_each_tree_row.md)
-[116: 填充每个节点的下一个右侧节点指针]
+[116: 填充每个节点的下一个右侧节点指针](116_populating_next_right_pointers_in_each_node.md)
 [117: 填充每个节点的下一个右侧节点指针II]
 
 ### 二叉树的属性
