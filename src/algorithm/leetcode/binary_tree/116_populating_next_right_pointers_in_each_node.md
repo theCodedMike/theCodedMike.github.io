@@ -108,7 +108,11 @@ impl Node {
             next: null_mut(),
         }))
     }
-    pub fn new_with_children(val: i32, left: *mut Node, right: *mut Node) -> *mut Node {
+    pub fn new_with_children(
+        val: i32, 
+        left: *mut Node, 
+        right: *mut Node
+    ) -> *mut Node {
         Box::into_raw(Box::new(Node {
             val,
             left,
@@ -441,6 +445,13 @@ Node bfsIter2(Node root) {
 @tab Rust(SmartPointer)
 ```rust
 pub fn connect(root: Option<Rc<RefCell<Node>>>) -> Option<Rc<RefCell<Node>>> {
+    //Self::use_next_pointer_iter(root)
+    Self::use_next_pointer_recur(root)
+}
+///
+/// Iteration
+///
+fn use_next_pointer_iter(root: Option<Rc<RefCell<Node>>>) -> Option<Rc<RefCell<Node>>> {
     let mut leftmost = root.clone();
 
     while let Some(level_first) = leftmost {
@@ -464,11 +475,43 @@ pub fn connect(root: Option<Rc<RefCell<Node>>>) -> Option<Rc<RefCell<Node>>> {
 
     root
 }
+///
+/// Recursion(Pre-Order)
+///
+fn use_next_pointer_recur(root: Option<Rc<RefCell<Node>>>) -> Option<Rc<RefCell<Node>>> {
+    const PRE_ORDER: fn(Option<Rc<RefCell<Node>>>) = |root| {
+        if let Some(curr) = root {
+            match (curr.borrow().left.clone(), curr.borrow().right.clone()) {
+                (Some(left), Some(right)) => {
+                    left.borrow_mut().next = Some(right.clone());
+                    if let Some(next) = curr.borrow().next.clone() {
+                        right.borrow_mut().next = next.borrow().left.clone();
+                    }
+                }
+                (_, _) => return,
+            }
+
+            PRE_ORDER(curr.borrow().left.clone());
+            PRE_ORDER(curr.borrow().right.clone());
+        }
+    };
+
+    PRE_ORDER(root.clone());
+
+    root
+}
 ```
 
 @tab Rust(RawPointer)
 ```rust
 pub fn connect(root: *mut Node) -> *mut Node {
+    //Self::use_next_pointer_iter(root)
+    Self::use_next_pointer_recur(root)
+}
+///
+/// Iteration
+///
+fn use_next_pointer_iter(root: *mut Node) -> *mut Node {
     let mut leftmost = root;
 
     while !leftmost.is_null() {
@@ -491,11 +534,39 @@ pub fn connect(root: *mut Node) -> *mut Node {
 
     root
 }
+///
+/// Recursion(Pre-Order)
+///
+fn use_next_pointer_recur(root: *mut Node) -> *mut Node {
+    const PRE_ORDER: fn(*mut Node) = |root| unsafe {
+        if root.is_null() || (*root).left.is_null() {
+            return;
+        }
+        (*(*root).left).next = (*root).right;
+        if !(*root).next.is_null() {
+            (*(*root).right).next = (*(*root).next).left;
+        }
+
+        PRE_ORDER((*root).left);
+        PRE_ORDER((*root).right);
+    };
+
+    PRE_ORDER(root);
+    
+    root
+}
 ```
 
 @tab Rust(NonNull)
 ```rust
 pub fn connect(root: Option<NonNull<Node>>) -> Option<NonNull<Node>> {
+    //Self::use_next_pointer_iter(root)
+    Self::use_next_pointer_recur(root)
+}
+///
+/// Iteration
+///
+fn use_next_pointer_iter(root: Option<NonNull<Node>>) -> Option<NonNull<Node>> {
     let mut leftmost = root.clone();
 
     while let Some(level_first) = leftmost {
@@ -521,11 +592,43 @@ pub fn connect(root: Option<NonNull<Node>>) -> Option<NonNull<Node>> {
 
     root
 }
+///
+/// Recursion(Pre-Order)
+///
+fn use_next_pointer_recur(root: Option<NonNull<Node>>) -> Option<NonNull<Node>> {
+    const PRE_ORDER: fn(Option<NonNull<Node>>) = |root| unsafe {
+        if let Some(curr) = root {
+            match (curr.as_ref().left, curr.as_ref().right) {
+                (Some(left), Some(right)) => {
+                    (*left.as_ptr()).next = Some(right);
+                    if let Some(next) = curr.as_ref().next {
+                        (*right.as_ptr()).next = next.as_ref().left;
+                    }
+                }
+                (_, _) => return,
+            }
+
+            PRE_ORDER(curr.as_ref().left);
+            PRE_ORDER(curr.as_ref().right);
+        }
+    };
+
+    PRE_ORDER(root);
+
+    root
+}
 ```
 
 @tab Java
 ```java
 public Node connect(Node root) {
+    //return this.useNextPointerIter(root);
+    return this.useNextPointerRecur(root);
+}
+/**
+ * Iteration
+ */
+Node useNextPointerIter(Node root) {
     Node leftmost = root;
 
     while (leftmost != null) {
@@ -547,5 +650,24 @@ public Node connect(Node root) {
 
     return root;
 }
+/**
+ * Recursion(Pre-Order)
+ */
+Node useNextPointerRecur(Node root) {
+    this.preOrder.accept(root);
+    return root;
+}
+Consumer<Node> preOrder = (root) -> {
+    if (root == null || root.left == null) {
+        return;
+    }
+    root.left.next = root.right;
+    if (root.next != null) {
+        root.right.next = root.next.left;
+    }
+
+    this.preOrder.accept(root.left);
+    this.preOrder.accept(root.right);
+};
 ```
 :::
