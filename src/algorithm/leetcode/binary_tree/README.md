@@ -216,7 +216,7 @@ procedure level_order(node)
 [117: Populating Next Right Pointers in Each Node II](117_populating_next_right_pointers_in_each_node_ii.md)
 
 ### Properties of Binary Trees
-[101: Symmetric Tree]
+[101: Symmetric Tree](101_symmetric_tree.md)
 [104: Maximum Depth of Binary Tree]
 [111: Minimum Depth of Binary Tree]
 [222: Count Complete Tree Nodes]

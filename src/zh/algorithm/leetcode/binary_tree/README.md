@@ -218,7 +218,7 @@ procedure level_order(node)
 [117: 填充每个节点的下一个右侧节点指针II](117_populating_next_right_pointers_in_each_node_ii.md)
 
 ### 二叉树的属性
-[101: 对称二叉树]
+[101: 对称二叉树](101_symmetric_tree.md)
 [104: 二叉树的最大深度]
 [111: 二叉树的最小深度]
 [222: 完全二叉树的节点个数]
