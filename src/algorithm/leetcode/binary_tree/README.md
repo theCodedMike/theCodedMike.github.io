@@ -217,7 +217,7 @@ procedure level_order(node)
 
 ### Properties of Binary Trees
 [101: Symmetric Tree](101_symmetric_tree.md)
-[104: Maximum Depth of Binary Tree]
+[104: Maximum Depth of Binary Tree](104_maximum_depth_of_binary_tree.md)
 [111: Minimum Depth of Binary Tree]
 [222: Count Complete Tree Nodes]
 [110: Balanced Binary Tree]
