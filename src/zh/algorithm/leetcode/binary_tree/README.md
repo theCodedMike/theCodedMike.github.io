@@ -221,7 +221,7 @@ procedure level_order(node)
 [101: 对称二叉树](101_symmetric_tree.md)
 [104: 二叉树的最大深度](104_maximum_depth_of_binary_tree.md)
 [111: 二叉树的最小深度](111_minimum_depth_of_binary_tree.md)
-[222: 完全二叉树的节点个数]
+[222: 完全二叉树的节点个数](222_count_complete_tree_nodes.md)
 [110: 平衡二叉树]
 [257: 二叉树的所有路径]
 [404: 左叶子之和]
