@@ -220,7 +220,7 @@ procedure level_order(node)
 [104: Maximum Depth of Binary Tree](104_maximum_depth_of_binary_tree.md)
 [111: Minimum Depth of Binary Tree](111_minimum_depth_of_binary_tree.md)
 [222: Count Complete Tree Nodes](222_count_complete_tree_nodes.md)
-[110: Balanced Binary Tree]
+[110: Balanced Binary Tree](110_balanced_binary_tree.md)
 [257: Binary Tree Paths]
 [404: Sum of Left Leaves]
 [513: Find Bottom Left Tree Value]
