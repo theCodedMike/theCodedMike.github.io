@@ -222,7 +222,7 @@ procedure level_order(node)
 [222: Count Complete Tree Nodes](222_count_complete_tree_nodes.md)
 [110: Balanced Binary Tree](110_balanced_binary_tree.md)
 [257: Binary Tree Paths](257_binary_tree_paths.md)
-[404: Sum of Left Leaves]
+[404: Sum of Left Leaves](404_sum_of_left_leaves.md)
 [513: Find Bottom Left Tree Value]
 [112: Path Sum]
 

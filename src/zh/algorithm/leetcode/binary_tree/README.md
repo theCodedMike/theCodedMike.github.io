@@ -224,7 +224,7 @@ procedure level_order(node)
 [222: 完全二叉树的节点个数](222_count_complete_tree_nodes.md)
 [110: 平衡二叉树](110_balanced_binary_tree.md)
 [257: 二叉树的所有路径](257_binary_tree_paths.md)
-[404: 左叶子之和]
+[404: 左叶子之和](404_sum_of_left_leaves.md)
 [513: 找树左下角的值]
 [112: 路径总和]
 
