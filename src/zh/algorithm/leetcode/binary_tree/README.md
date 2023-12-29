@@ -226,7 +226,7 @@ procedure level_order(node)
 [257: 二叉树的所有路径](257_binary_tree_paths.md)
 [404: 左叶子之和](404_sum_of_left_leaves.md)
 [513: 找树左下角的值](513_find_bottom_left_tree_value.md)
-[112: 路径总和]
+[112: 路径总和](112_path_sum.md)
 
 ### 二叉树的修改与构造
 [226: 翻转二叉树]

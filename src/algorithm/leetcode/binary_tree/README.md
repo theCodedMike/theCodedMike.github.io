@@ -224,7 +224,7 @@ procedure level_order(node)
 [257: Binary Tree Paths](257_binary_tree_paths.md)
 [404: Sum of Left Leaves](404_sum_of_left_leaves.md)
 [513: Find Bottom Left Tree Value](513_find_bottom_left_tree_value.md)
-[112: Path Sum]
+[112: Path Sum](112_path_sum.md)
 
 ### Operations of Binary Trees
 [226: Invert Binary Tree]
