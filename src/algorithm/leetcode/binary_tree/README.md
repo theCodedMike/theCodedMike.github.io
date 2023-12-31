@@ -228,7 +228,7 @@ procedure level_order(node)
 [113: Path Sum II](113_path_sum_ii.md)
 
 ### Operations of Binary Trees
-[226: Invert Binary Tree]
+[226: Invert Binary Tree](226_invert_binary_tree.md)
 [105: Construct Binary Tree from Pre-order and In-order Traversal]
 [106: Construct Binary Tree from Post-order and In-order Traversal]
 [654: Maximum Binary Tree]
