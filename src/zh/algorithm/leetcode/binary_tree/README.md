@@ -231,7 +231,7 @@ procedure level_order(node)
 
 ### 二叉树的修改与构造
 [226: 翻转二叉树](226_invert_binary_tree.md)
-[105: 从中序与先序遍历序列构造二叉树]
+[105: 从中序与先序遍历序列构造二叉树](105_construct_binary_tree_from_preorder_and_inorder_traversal.md)
 [106: 从中序与后序遍历序列构造二叉树]
 [654: 最大二叉树]
 [617: 合并二叉树]
