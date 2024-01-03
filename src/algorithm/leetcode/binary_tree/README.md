@@ -230,7 +230,7 @@ procedure level_order(node)
 ### Operations of Binary Trees
 [226: Invert Binary Tree](226_invert_binary_tree.md)
 [105: Construct Binary Tree from Pre-order and In-order Traversal](105_construct_binary_tree_from_preorder_and_inorder_traversal.md)
-[106: Construct Binary Tree from Post-order and In-order Traversal]
+[106: Construct Binary Tree from Post-order and In-order Traversal](106_construct_binary_tree_from_post_order_and_in_order_traversal.md)
 [654: Maximum Binary Tree]
 [617: Merge Two Binary Trees]
 
