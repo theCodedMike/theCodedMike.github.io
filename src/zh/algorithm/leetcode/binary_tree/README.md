@@ -234,7 +234,7 @@ procedure level_order(node)
 [105: 从中序与先序遍历序列构造二叉树](105_construct_binary_tree_from_preorder_and_inorder_traversal.md)
 [106: 从中序与后序遍历序列构造二叉树](./106_construct_binary_tree_from_post_order_and_in_order_traversal.md)
 [654: 最大二叉树](654_maximum_binary_tree.md)
-[617: 合并二叉树]
+[617: 合并二叉树](617_merge_two_binary_trees.md)
 
 ### 二叉搜索树的属性
 [700: 二叉搜索树中的搜索]

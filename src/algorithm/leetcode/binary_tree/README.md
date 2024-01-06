@@ -232,7 +232,7 @@ procedure level_order(node)
 [105: Construct Binary Tree from Pre-order and In-order Traversal](105_construct_binary_tree_from_preorder_and_inorder_traversal.md)
 [106: Construct Binary Tree from Post-order and In-order Traversal](106_construct_binary_tree_from_post_order_and_in_order_traversal.md)
 [654: Maximum Binary Tree](654_maximum_binary_tree.md)
-[617: Merge Two Binary Trees]
+[617: Merge Two Binary Trees](617_merge_two_binary_trees.md)
 
 ### Properties of Binary Search Trees
 [700: Search in a Binary Search Tree]
