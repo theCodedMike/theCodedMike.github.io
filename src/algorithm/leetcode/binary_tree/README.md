@@ -235,7 +235,7 @@ procedure level_order(node)
 [617: Merge Two Binary Trees](617_merge_two_binary_trees.md)
 
 ### Properties of Binary Search Trees
-[700: Search in a Binary Search Tree]
+[700: Search in a Binary Search Tree](700_search_in_a_binary_search_tree.md)
 [98: Validate Binary Search Tree]
 [530: Minimum Absolute Difference in BST]
 [501: Find Mode in Binary Search Tree]
