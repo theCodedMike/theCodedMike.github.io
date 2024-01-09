@@ -237,7 +237,7 @@ procedure level_order(node)
 ### Properties of Binary Search Trees
 [700: Search in a Binary Search Tree](700_search_in_a_binary_search_tree.md)
 [98: Validate Binary Search Tree](98_validate_binary_search_tree.md)
-[530: Minimum Absolute Difference in BST]
+[530: Minimum Absolute Difference in BST](530_minimum_absolute_difference_in_bst.md)
 [501: Find Mode in Binary Search Tree]
 [538: Convert BST to Greater Tree]
 
