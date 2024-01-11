@@ -240,7 +240,7 @@ procedure level_order(node)
 [700: 二叉搜索树中的搜索](700_search_in_a_binary_search_tree.md)
 [98: 验证二叉搜索树](98_validate_binary_search_tree.md)
 [530: 二叉搜索树的最小绝对差](530_minimum_absolute_difference_in_bst.md)
-[501: 二叉搜索树中的众数]
+[501: 二叉搜索树中的众数](501_find_mode_in_binary_search_tree.md)
 [538: 把二叉搜索树转换为累加树]
 
 ### 二叉树公共祖先问题
