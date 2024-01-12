@@ -239,7 +239,7 @@ procedure level_order(node)
 [98: Validate Binary Search Tree](98_validate_binary_search_tree.md)
 [530: Minimum Absolute Difference in BST](530_minimum_absolute_difference_in_bst.md)
 [501: Find Mode in Binary Search Tree](501_find_mode_in_binary_search_tree.md)
-[538: Convert BST to Greater Tree]
+[538: Convert BST to Greater Tree](538_convert_bst_to_greater_tree.md)
 
 ### Common Ancestor of Binary Trees
 [236: Lowest Common Ancestor of a Binary Tree]

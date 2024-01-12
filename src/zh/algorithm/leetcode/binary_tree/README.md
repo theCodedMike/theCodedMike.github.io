@@ -241,7 +241,7 @@ procedure level_order(node)
 [98: 验证二叉搜索树](98_validate_binary_search_tree.md)
 [530: 二叉搜索树的最小绝对差](530_minimum_absolute_difference_in_bst.md)
 [501: 二叉搜索树中的众数](501_find_mode_in_binary_search_tree.md)
-[538: 把二叉搜索树转换为累加树]
+[538: 把二叉搜索树转换为累加树](538_convert_bst_to_greater_tree.md)
 
 ### 二叉树公共祖先问题
 [236: 二叉树的最近公共祖先]
