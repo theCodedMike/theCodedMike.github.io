@@ -242,7 +242,7 @@ procedure level_order(node)
 [538: Convert BST to Greater Tree](538_convert_bst_to_greater_tree.md)
 
 ### Common Ancestor of Binary Trees
-[236: Lowest Common Ancestor of a Binary Tree]
+[236: Lowest Common Ancestor of a Binary Tree](236_lowest_common_ancestor_of_a_binary_tree.md)
 [235: Lowest Common Ancestor of a Binary Search Tree]
 
 ### Operations of Binary Search Trees

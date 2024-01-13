@@ -244,7 +244,7 @@ procedure level_order(node)
 [538: 把二叉搜索树转换为累加树](538_convert_bst_to_greater_tree.md)
 
 ### 二叉树公共祖先问题
-[236: 二叉树的最近公共祖先]
+[236: 二叉树的最近公共祖先](236_lowest_common_ancestor_of_a_binary_tree.md)
 [235: 二叉搜索树的最近公共祖先]
 
 ### 二叉搜索树的修改与构造
