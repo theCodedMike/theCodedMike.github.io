@@ -243,7 +243,7 @@ procedure level_order(node)
 
 ### Common Ancestor of Binary Trees
 [236: Lowest Common Ancestor of a Binary Tree](236_lowest_common_ancestor_of_a_binary_tree.md)
-[235: Lowest Common Ancestor of a Binary Search Tree]
+[235: Lowest Common Ancestor of a Binary Search Tree](235_lowest_common_ancestor_of_a_binary_search_tree.md)
 
 ### Operations of Binary Search Trees
 [701: Insert into a Binary Search Tree]

@@ -245,7 +245,7 @@ procedure level_order(node)
 
 ### 二叉树公共祖先问题
 [236: 二叉树的最近公共祖先](236_lowest_common_ancestor_of_a_binary_tree.md)
-[235: 二叉搜索树的最近公共祖先]
+[235: 二叉搜索树的最近公共祖先](235_lowest_common_ancestor_of_a_binary_search_tree.md)
 
 ### 二叉搜索树的修改与构造
 [701: 二叉搜索树中的插入操作]
