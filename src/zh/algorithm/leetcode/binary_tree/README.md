@@ -248,7 +248,7 @@ procedure level_order(node)
 [235: 二叉搜索树的最近公共祖先](235_lowest_common_ancestor_of_a_binary_search_tree.md)
 
 ### 二叉搜索树的修改与构造
-[701: 二叉搜索树中的插入操作]
+[701: 二叉搜索树中的插入操作](701_insert_into_a_binary_search_tree.md)
 [450: 删除二叉搜索树中的节点]
 [669: 修剪二叉搜索树]
 [108: 将有序数组转换为二叉搜索树]

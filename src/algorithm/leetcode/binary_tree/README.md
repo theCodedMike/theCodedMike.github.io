@@ -246,7 +246,7 @@ procedure level_order(node)
 [235: Lowest Common Ancestor of a Binary Search Tree](235_lowest_common_ancestor_of_a_binary_search_tree.md)
 
 ### Operations of Binary Search Trees
-[701: Insert into a Binary Search Tree]
+[701: Insert into a Binary Search Tree](701_insert_into_a_binary_search_tree.md)
 [450: Delete Node in a BST]
 [669: Trim a Binary Search Tree]
 [108: Convert Sorted Array to Binary Search Tree]
