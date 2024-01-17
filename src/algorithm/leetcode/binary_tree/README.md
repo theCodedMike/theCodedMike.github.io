@@ -247,7 +247,7 @@ procedure level_order(node)
 
 ### Operations of Binary Search Trees
 [701: Insert into a Binary Search Tree](701_insert_into_a_binary_search_tree.md)
-[450: Delete Node in a BST]
+[450: Delete Node in a BST](450_delete_node_in_a_bst.md)
 [669: Trim a Binary Search Tree]
 [108: Convert Sorted Array to Binary Search Tree]
 [109: Convert Sorted List to Binary Search Tree]
