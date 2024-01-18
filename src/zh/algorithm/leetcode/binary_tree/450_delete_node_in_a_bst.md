@@ -27,7 +27,7 @@ tag:
 一个正确的答案是 [5, 4, 6, 2, null, null, 7], 如上图所示。
 
 另一个正确答案是 [5, 2, 6, null, 4, null, 7]。
-![](../../../../assets/leetcode/delete_node_in_a_bst_2_450.png)
+![](../../../../../assets/leetcode/delete_node_in_a_bst_2_450.png)
 
 **示例 2**
 输入: root = [5, 3, 6, 2, 4, null, 7], key = 0
