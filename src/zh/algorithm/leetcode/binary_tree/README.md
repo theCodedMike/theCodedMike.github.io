@@ -251,7 +251,7 @@ procedure level_order(node)
 [701: 二叉搜索树中的插入操作](701_insert_into_a_binary_search_tree.md)
 [450: 删除二叉搜索树中的节点](450_delete_node_in_a_bst.md)
 [669: 修剪二叉搜索树](669_trim_a_binary_search_tree.md)
-[108: 将有序数组转换为二叉搜索树]
+[108: 将有序数组转换为二叉搜索树](108_convert_sorted_array_to_binary_search_tree.md)
 [109: 将有序列表转换为二叉搜索树]
 
 
