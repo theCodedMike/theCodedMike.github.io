@@ -254,6 +254,10 @@ procedure level_order(node)
 [108: 将有序数组转换为二叉搜索树](108_convert_sorted_array_to_binary_search_tree.md)
 [109: 将有序列表转换为二叉搜索树](109_convert_sorted_list_to_binary_search_tree.md)
 
+### 其他
+[100: 相同的树](100_same_tree.md)
+[572: 另一棵树的子树]
+[559: N叉树的最大深度]
 
 ## 总结
 

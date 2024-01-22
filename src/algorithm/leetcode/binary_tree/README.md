@@ -252,6 +252,10 @@ procedure level_order(node)
 [108: Convert Sorted Array to Binary Search Tree](108_convert_sorted_array_to_binary_search_tree.md)
 [109: Convert Sorted List to Binary Search Tree](109_convert_sorted_list_to_binary_search_tree.md)
 
+### Other
+[100: Same Tree](100_same_tree.md)
+[572: Subtree of Another Tree]
+[559: Maximum Depth of N-ary Tree]
 
 ## Summary
 
