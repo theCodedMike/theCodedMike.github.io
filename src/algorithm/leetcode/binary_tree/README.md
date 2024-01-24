@@ -254,7 +254,7 @@ procedure level_order(node)
 
 ### Other
 [100: Same Tree](100_same_tree.md)
-[572: Subtree of Another Tree]
+[572: Subtree of Another Tree](572_subtree_of_another_tree.md)
 [559: Maximum Depth of N-ary Tree]
 
 ## Summary
