@@ -257,7 +257,7 @@ procedure level_order(node)
 ### 其他
 [100: 相同的树](100_same_tree.md)
 [572: 另一棵树的子树](572_subtree_of_another_tree.md)
-[559: N叉树的最大深度]
+[559: N叉树的最大深度](559_maximum_depth_of_n_ary_tree.md)
 
 ## 总结
 
