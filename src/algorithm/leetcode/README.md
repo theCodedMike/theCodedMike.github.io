@@ -21,7 +21,7 @@ category: leetcode
 
 ### [Binary Tree](./binary_tree/README.md)
 
-### [BackTrace](./backtrace/README.md)
+### [Backtracking](./backtracking/README.md)
 
 ### [Greedy](./greedy/README.md)
 

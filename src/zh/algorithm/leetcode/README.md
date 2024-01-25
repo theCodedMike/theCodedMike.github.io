@@ -21,7 +21,7 @@ category: leetcode
 
 ### [二叉树](./binary_tree/README.md)
 
-### [回溯](./backtrace/README.md)
+### [回溯](./backtracking/README.md)
 
 ### [贪心算法](./greedy/README.md)
 

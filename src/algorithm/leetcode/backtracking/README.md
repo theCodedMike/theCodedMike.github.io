@@ -1,15 +1,37 @@
 ---
 title: Backtracking
 icon: discover
-date: 2023-09-27
+date: 2024-01-25
 dir:
   order: 8
 category: leetcode
 tag: backtracking
-sticky: true
+sticky: false
 ---
 
 ## Backtracking
+**Backtracking** is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point of time (by time, here, is referred to the time elapsed till reaching any level of the search tree).
+
+There are three types of problems in backtracking:
+- **Decision Problem**: In this, we search for a feasible solution.
+- **Optimization Problem**: In this, we search for the best solution.
+- **Enumeration Problem**: In this, we find all feasible solutions.
+
+The backtracking algorithm template is as follows:
+```text
+void backtracking(params) {
+    if (terminate condition) {
+        store result;
+        return;
+    }
+
+    for (elem : elems) {
+        process elem;
+        backtracking(params); // recursion
+        backtracking;
+    }
+}
+```
 
 
 ## Exercise
