@@ -36,7 +36,7 @@ void backtracking(params) {
 
 ## Exercise
 ### Combinations
-[77: Combinations]
+[77: Combinations](77_combinations.md)
 [17: Letter Combinations of a Phone Number]
 [39: Combination Sum]
 [40: Combination Sum II]
