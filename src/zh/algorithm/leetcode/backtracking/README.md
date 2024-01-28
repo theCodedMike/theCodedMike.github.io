@@ -44,7 +44,7 @@ void backtracking(参数) {
 ## 习题
 ### 组合
 [77: 组合](77_combinations.md)
-[17: 电话号码的字母组合]
+[17: 电话号码的字母组合](17_letter_combinations_of_a_phone_number.md)
 [39: 组合总和]
 [40: 组合总和II]
 [216: 组合总和III]
