@@ -4,7 +4,7 @@ icon: discover
 date: 2024-01-28
 order: 2
 sticky: true
-category: Backtracking
+category: backtracking
 tag: 
   - medium
   - hash table

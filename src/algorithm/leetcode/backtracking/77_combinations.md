@@ -4,7 +4,7 @@ icon: discover
 date: 2024-01-26
 order: 1
 sticky: true
-category: Backtracking
+category: backtracking
 tag: 
   - medium
   - backtracking
