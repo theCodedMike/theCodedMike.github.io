@@ -39,7 +39,7 @@ void backtracking(params) {
 [77: Combinations](77_combinations.md)
 [17: Letter Combinations of a Phone Number](17_letter_combinations_of_a_phone_number.md)
 [39: Combination Sum](39_combination_sum.md)
-[40: Combination Sum II]
+[40: Combination Sum II](40_combination_sum_ii.md)
 [216: Combination Sum III]
 
 ### Partitioning
