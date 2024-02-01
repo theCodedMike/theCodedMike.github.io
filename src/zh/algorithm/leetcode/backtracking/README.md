@@ -47,7 +47,7 @@ void backtracking(参数) {
 [17: 电话号码的字母组合](17_letter_combinations_of_a_phone_number.md)
 [39: 组合总和](39_combination_sum.md)
 [40: 组合总和II](40_combination_sum_ii.md)
-[216: 组合总和III]
+[216: 组合总和III](216_combination_sum_iii.md)
 
 ### 分割
 [131: 分割回文串]
