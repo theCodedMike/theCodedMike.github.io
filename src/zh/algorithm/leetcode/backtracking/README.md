@@ -50,7 +50,7 @@ void backtracking(参数) {
 [216: 组合总和III](216_combination_sum_iii.md)
 
 ### 分割
-[131: 分割回文串]
+[131: 分割回文串](131_palindrome_partitioning.md)
 [93: 复原IP地址]
 
 ### 子集

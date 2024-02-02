@@ -43,7 +43,7 @@ void backtracking(params) {
 [216: Combination Sum III](216_combination_sum_iii.md)
 
 ### Partitioning
-[131: Palindrome Partitioning]
+[131: Palindrome Partitioning](131_palindrome_partitioning.md)
 [93: Restore IP Addresses]
 
 ### Subsets
