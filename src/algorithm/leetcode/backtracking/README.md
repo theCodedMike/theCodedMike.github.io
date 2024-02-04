@@ -44,7 +44,7 @@ void backtracking(params) {
 
 ### Partitioning
 [131: Palindrome Partitioning](131_palindrome_partitioning.md)
-[93: Restore IP Addresses]
+[93: Restore IP Addresses](93_restore_ip_addresses.md)
 
 ### Subsets
 [78: Subsets]
