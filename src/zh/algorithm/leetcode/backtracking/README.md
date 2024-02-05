@@ -54,7 +54,7 @@ void backtracking(参数) {
 [93: 复原IP地址](93_restore_ip_addresses.md)
 
 ### 子集
-[78: 子集]
+[78: 子集](78_subsets.md)
 [90: 子集II]
 
 ### 排列

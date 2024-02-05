@@ -47,7 +47,7 @@ void backtracking(params) {
 [93: Restore IP Addresses](93_restore_ip_addresses.md)
 
 ### Subsets
-[78: Subsets]
+[78: Subsets](78_subsets.md)
 [90: Subsets II]
 
 ### Permutations
