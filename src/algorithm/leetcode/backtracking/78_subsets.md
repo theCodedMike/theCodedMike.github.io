@@ -7,8 +7,9 @@ sticky: true
 category: backtracking
 tag: 
   - medium
-  - string
+  - array
   - backtracking
+  - bit manipulation
 ---
 
 ## I Problem

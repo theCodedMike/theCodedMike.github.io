@@ -1,8 +1,8 @@
 ---
-title: 78, 子集
+title: 90, 子集II
 icon: discover
-date: 2024-02-05
-order: 8
+date: 2024-02-06
+order: 9
 sticky: true
 category: backtracking
 tag: 
@@ -13,13 +13,13 @@ tag:
 ---
 
 ## 一、题目描述
-给你一个整数数组`nums`，数组中的元素**互不相同**。返回该数组所有可能的子集（幂集）。
+给你一个整数数组`nums`，其中可能包含重复元素，请你返回该数组所有可能的子集（幂集）。
 
-解集**不能**包含重复的子集。你可以按**任意顺序**返回解集。
+解集**不能**包含重复的子集。返回的解集中，子集可以按**任意顺序**排列。
 
 **示例 1**
-输入: nums = [1, 2, 3]
-输出: [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
+输入: nums = [1, 2, 2]
+输出: [[], [1], [1, 2], [1, 2, 2], [2], [2, 2]]
 
 **示例 2**
 输入: nums = [0]
@@ -28,7 +28,6 @@ tag:
 **提示**
 - `1 <= nums.length <= 10`
 - `-10 <= nums[i] <= 10`
-- `nums`中的所有元素**互不相同**
 
 **相关主题**
 - 位运算
@@ -41,22 +40,27 @@ tag:
 ::: code-tabs
 @tab Rust
 ```rust
-pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
+pub fn subsets_with_dup(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
+    nums.sort_unstable();
+
     const DFS: fn(usize, &[i32], &mut Vec<i32>, &mut Vec<Vec<i32>>) = 
         |i, nums, subset, res| {
             res.push(subset.clone());
-
             if i == nums.len() {
                 return;
             }
 
             for j in i..nums.len() {
+                if j > i && nums[j] == nums[j - 1] {
+                    continue;
+                }
+
                 subset.push(nums[j]);
                 DFS(j + 1, nums, subset, res);
                 subset.pop();
             }
         };
-    let mut res = Vec::with_capacity(2_usize.pow(nums.len() as u32));
+    let mut res = vec![];
 
     DFS(0, &nums, &mut vec![], &mut res);
 
@@ -66,7 +70,6 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
 
 @tab Java
 ```java
-@FunctionalInterface
 interface QuadrConsumer<A, B, C, D> {
     void accept(A a, B b, C c, D d);
 }
@@ -74,21 +77,27 @@ interface QuadrConsumer<A, B, C, D> {
 QuadrConsumer<Integer, int[], List<Integer>, List<List<Integer>>> dfs =
         (i, nums, subset, res) -> {
             res.add(new ArrayList<>(subset));
-
             if (i == nums.length) {
                 return;
             }
 
             for (int j = i; j < nums.length; j++) {
+                if (j > i && nums[j] == nums[j - 1]) {
+                    continue;
+                }
+
                 subset.addLast(nums[j]);
                 this.dfs.accept(j + 1, nums, subset, res);
                 subset.removeLast();
             }
         };
 
-public List<List<Integer>> subsets(int[] nums) {
+public List<List<Integer>> subsetsWithDup(int[] nums) {
+    Arrays.sort(nums);
     List<List<Integer>> res = new ArrayList<>();
+
     this.dfs.accept(0, nums, new ArrayList<>(), res);
+
     return res;
 }
 ```
@@ -98,15 +107,21 @@ public List<List<Integer>> subsets(int[] nums) {
 ::: code-tabs
 @tab Rust
 ```rust
-pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
+pub fn subsets_with_dup(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
+    nums.sort_unstable();
     let mut res = vec![vec![]];
+    let (mut pre_len, mut len) = (0, 0);
 
     for i in 0..nums.len() {
-        for j in 0..res.len() {
+        (pre_len, len) = (len, res.len());
+
+        if i > 0 && nums[i] != nums[i - 1] {
+            pre_len = 0;
+        }
+
+        for j in pre_len..len {
             let mut subset = res[j].clone();
-
             subset.push(nums[i]);
-
             res.push(subset);
         }
     }
@@ -117,17 +132,25 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
 
 @tab Java
 ```java
-public List<List<Integer>> subsets(int[] nums) {
+public List<List<Integer>> subsetsWithDup(int[] nums) {
+    Arrays.sort(nums);
     List<List<Integer>> res = new ArrayList<>() {{
         this.add(new ArrayList<>());
     }};
+    int preSize = 0;
+    int size = 0;
 
     for (int i = 0; i < nums.length; i++) {
-        for (int j = 0, size = res.size(); j < size; j++) {
-            ArrayList<Integer> subset = new ArrayList<>(res.get(j));
+        preSize = size;
+        size = res.size();
 
+        if (i > 0 && nums[i] != nums[i - 1]) {
+            preSize = 0;
+        }
+
+        for (int j = preSize; j < size; j++) {
+            ArrayList<Integer> subset = new ArrayList<>(res.get(j));
             subset.add(nums[i]);
-            
             res.add(subset);
         }
     }
