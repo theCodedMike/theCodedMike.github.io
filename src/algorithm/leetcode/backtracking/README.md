@@ -51,7 +51,7 @@ void backtracking(params) {
 [90: Subsets II](90_subsets_ii.md)
 
 ### Permutations
-[46: Permutations]
+[46: Permutations](46_permutations.md)
 [47: Permutations II]
 
 ### Checkerboard

@@ -58,7 +58,7 @@ void backtracking(参数) {
 [90: 子集II](90_subsets_ii.md)
 
 ### 排列
-[46: 全排列]
+[46: 全排列](46_permutations.md)
 [47: 全排列II]
 
 ### 棋盘问题
