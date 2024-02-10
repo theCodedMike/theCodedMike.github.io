@@ -52,7 +52,7 @@ void backtracking(params) {
 
 ### Permutations
 [46: Permutations](46_permutations.md)
-[47: Permutations II]
+[47: Permutations II](47_permutations_ii.md)
 
 ### Checkerboard
 [51: N-Queens]

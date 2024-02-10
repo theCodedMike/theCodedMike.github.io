@@ -59,7 +59,7 @@ void backtracking(参数) {
 
 ### 排列
 [46: 全排列](46_permutations.md)
-[47: 全排列II]
+[47: 全排列II](47_permutations_ii.md)
 
 ### 棋盘问题
 [51: N皇后]
