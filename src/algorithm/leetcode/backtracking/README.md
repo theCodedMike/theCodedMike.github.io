@@ -54,8 +54,8 @@ void backtracking(params) {
 [46: Permutations](46_permutations.md)
 [47: Permutations II](47_permutations_ii.md)
 
-### Checkerboard
-[51: N-Queens]
+### Chessboard
+[51: N-Queens](51_n_queens.md)
 [52: N-Queens II]
 [37: Sudoku Solver]
 
