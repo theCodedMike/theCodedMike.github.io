@@ -56,7 +56,7 @@ void backtracking(params) {
 
 ### Chessboard
 [51: N-Queens](51_n_queens.md)
-[52: N-Queens II]
+[52: N-Queens II](52_n_queens_ii.md)
 [37: Sudoku Solver]
 
 ### Other
