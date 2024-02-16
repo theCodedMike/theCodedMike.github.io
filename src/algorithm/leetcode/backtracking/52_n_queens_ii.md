@@ -88,12 +88,12 @@ QuadrConsumer<Integer, Integer, List<int[]>, int[]> dfs =
             for (int col = 0; col < len; col++) {
                 int finalCol = col;
                 if (pos.stream().anyMatch(p -> {
-                    // 同一列
+                    // same column
                     if (p[1] == finalCol) {
                         return true;
                     }
                     double slope = (double) (row - p[0]) / (finalCol - p[1]);
-                    // 同一斜线
+                    // same diagonal
                     return slope == 1 || slope == -1;
                 })) {
                     continue;

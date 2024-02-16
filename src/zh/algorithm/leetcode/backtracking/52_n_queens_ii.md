@@ -47,12 +47,12 @@ pub fn total_n_queens(n: i32) -> i32 {
 
             for col in 0..len {
                 if pos.iter().any(|&(r, c)| {
-                    // same column
+                    // 同一列
                     if c == col {
                         return true;
                     }
                     let slope = (row - r) as f64 / (col - c) as f64;
-                    // same diagonal
+                    // 同一斜线
                     slope == 1.0 || slope == -1.0
                 }) {
                     continue;
