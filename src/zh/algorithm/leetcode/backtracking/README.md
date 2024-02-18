@@ -65,7 +65,7 @@ void backtracking(参数) {
 [51: N皇后](51_n_queens.md)
 [52: N皇后II](52_n_queens_ii.md)
 [36: 有效的数独](36_valid_sudoku.md)
-[37: 解数独]
+[37: 解数独](37_sudoku_solver.md)
 
 ### 其他
 [491: 递增子序列]
