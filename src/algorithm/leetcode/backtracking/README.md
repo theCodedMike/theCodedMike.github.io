@@ -61,7 +61,7 @@ void backtracking(params) {
 [37: Sudoku Solver](37_sudoku_solver.md)
 
 ### Other
-[491: Non-decreasing Subsequences]
+[491: Non-decreasing Subsequences](491_non_decreasing_subsequences.md)
 [332: Reconstruct Itinerary]
 
 

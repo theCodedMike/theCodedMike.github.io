@@ -68,7 +68,7 @@ void backtracking(参数) {
 [37: 解数独](37_sudoku_solver.md)
 
 ### 其他
-[491: 递增子序列]
+[491: 递增子序列](491_non_decreasing_subsequences.md)
 [332: 重新安排行程]
 
 
