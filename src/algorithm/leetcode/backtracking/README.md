@@ -62,7 +62,7 @@ void backtracking(params) {
 
 ### Other
 [491: Non-decreasing Subsequences](491_non_decreasing_subsequences.md)
-[332: Reconstruct Itinerary]
+[332: Reconstruct Itinerary](332_reconstruct_itinerary.md)
 
 
 ## Summary

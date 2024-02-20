@@ -69,7 +69,7 @@ void backtracking(参数) {
 
 ### 其他
 [491: 递增子序列](491_non_decreasing_subsequences.md)
-[332: 重新安排行程]
+[332: 重新安排行程](332_reconstruct_itinerary.md)
 
 
 ## 总结
