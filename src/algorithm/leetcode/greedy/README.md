@@ -1,10 +1,42 @@
 ---
 title: Greedy
 icon: discover
-date: 2023-09-27
+date: 2024-02-25
 dir:
   order: 9
 category: leetcode
 tag: greedy
-sticky: true
+sticky: false
 ---
+
+## Greedy
+**Greedy algorithms** are a class of algorithms that make **locally optimal** choices at each step with the hope of finding a **global optimum** solution. In these algorithms, decisions are made based on the information available at the current moment without considering the consequences of these decisions in the future. The key idea is to select the best possible choice at each step, leading to a solution that may not always be the most optimal but is often good enough for many problems.
+
+### Advantages of Greedy Approach
+- The algorithm is easier to describe.
+- This algorithm can perform better than other algorithms (but, not in all cases).
+
+### Drawback of Greedy Approach
+As mentioned earlier, the greedy algorithm doesn't always produce the optimal solution. This is the major disadvantage of the algorithm
+
+## Exercise
+[455: Assign Cookies](455_assign_cookies.md)
+[1005: Maximize Sum Of Array After K Negations]
+[860: Lemonade Change]
+[376: Wiggle Subsequence]
+[738: Monotone Increasing Digits]
+[122: Best Time to Buy and Sell Stock II]
+[714: Best Time to Buy and Sell Stock with Transaction Fee]
+[135: Candy]
+[406: Queue Reconstruction by Height]
+[55: Jump Game]
+[45: Jump Game II]
+[452: Minimum Number of Arrows to Burst Balloons]
+[435: Non-overlapping Intervals]
+[763: Partition Labels]
+[56: Merge Intervals]
+[53: Maximum Subarray]
+[134: Gas Station]
+[968: Binary Tree Cameras]
+
+## Summary
