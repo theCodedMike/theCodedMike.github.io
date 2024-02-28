@@ -24,7 +24,7 @@ sticky: false
 
 ## 习题
 [455: 分发饼干](455_assign_cookies.md)
-[1005: K次取反后最大化的数组和]
+[1005: K次取反后最大化的数组和](1005_maximize_sum_of_array_after_k_negations.md)
 [860: 柠檬水找零]
 [376: 摆动序列]
 [738: 单调递增的数字]

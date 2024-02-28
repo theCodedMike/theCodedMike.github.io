@@ -21,7 +21,7 @@ As mentioned earlier, the greedy algorithm doesn't always produce the optimal so
 
 ## Exercise
 [455: Assign Cookies](455_assign_cookies.md)
-[1005: Maximize Sum Of Array After K Negations]
+[1005: Maximize Sum Of Array After K Negations](1005_maximize_sum_of_array_after_k_negations.md)
 [860: Lemonade Change]
 [376: Wiggle Subsequence]
 [738: Monotone Increasing Digits]
