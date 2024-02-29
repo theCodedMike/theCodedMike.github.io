@@ -152,3 +152,40 @@ public int findContentChildren(int[] g, int[] s) {
 }
 ```
 :::
+
+### Approach 3: Two Pointers + Greedy
+::: code-tabs
+@tab Rust
+```rust
+pub fn find_content_children(g: Vec<i32>, s: Vec<i32>) -> i32 {
+    g.sort_unstable();
+    s.sort_unstable();
+
+    let mut j = 0;
+    for i in s {
+        if j < g.len() && g[j] <= i {
+            j += 1;
+        }
+    }
+
+    j as i32
+}
+```
+
+@tab Java
+```java
+public int findContentChildren(int[] g, int[] s) {
+    Arrays.sort(g);
+    Arrays.sort(s);
+
+    int j = 0;
+    for (int i : s) {
+        if (j < g.length && g[j] <= i) {
+            j++;
+        }
+    }
+
+    return j;
+}
+```
+:::
