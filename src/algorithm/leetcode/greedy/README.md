@@ -23,7 +23,7 @@ As mentioned earlier, the greedy algorithm doesn't always produce the optimal so
 [455: Assign Cookies](455_assign_cookies.md)
 [1005: Maximize Sum Of Array After K Negations](1005_maximize_sum_of_array_after_k_negations.md)
 [860: Lemonade Change](860_lemonade_change.md)
-[376: Wiggle Subsequence]
+[376: Wiggle Subsequence](376_wiggle_subsequence.md)
 [738: Monotone Increasing Digits]
 [122: Best Time to Buy and Sell Stock II]
 [714: Best Time to Buy and Sell Stock with Transaction Fee]
