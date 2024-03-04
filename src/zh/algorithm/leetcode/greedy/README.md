@@ -27,7 +27,7 @@ sticky: false
 [1005: K次取反后最大化的数组和](1005_maximize_sum_of_array_after_k_negations.md)
 [860: 柠檬水找零](860_lemonade_change.md)
 [376: 摆动序列](376_wiggle_subsequence.md)
-[738: 单调递增的数字]
+[738: 单调递增的数字](738_monotone_increasing_digits.md)
 [122: 买卖股票的最佳时机II]
 [714: 买卖股票的最佳时机含手续费]
 [135: 分发糖果]
