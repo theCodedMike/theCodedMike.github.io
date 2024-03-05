@@ -25,7 +25,7 @@ As mentioned earlier, the greedy algorithm doesn't always produce the optimal so
 [860: Lemonade Change](860_lemonade_change.md)
 [376: Wiggle Subsequence](376_wiggle_subsequence.md)
 [738: Monotone Increasing Digits](738_monotone_increasing_digits.md)
-[122: Best Time to Buy and Sell Stock II]
+[122: Best Time to Buy and Sell Stock II](122_best_time_to_buy_and_sell_stock_ii.md)
 [714: Best Time to Buy and Sell Stock with Transaction Fee]
 [135: Candy]
 [406: Queue Reconstruction by Height]
