@@ -29,7 +29,7 @@ sticky: false
 [376: 摆动序列](376_wiggle_subsequence.md)
 [738: 单调递增的数字](738_monotone_increasing_digits.md)
 [122: 买卖股票的最佳时机II](122_best_time_to_buy_and_sell_stock_ii.md)
-[714: 买卖股票的最佳时机含手续费]
+[714: 买卖股票的最佳时机含手续费](714_best_time_to_buy_and_sell_stock_with_transaction_fee.md)
 [135: 分发糖果]
 [406: 根据身高重建队列]
 [55: 跳跃游戏]

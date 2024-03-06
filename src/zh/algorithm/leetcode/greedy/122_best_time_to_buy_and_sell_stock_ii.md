@@ -76,18 +76,70 @@ public int maxProfit(int[] prices) {
 @tab Go
 ```go
 func maxProfit(prices []int) int {
-	  res := 0.0
-	  
-    for i, size := 1, len(prices); i < size; i++ {
-		    res += math.Max(0, float64(prices[i]-prices[i-1]))
-	  }
+    res := 0
 
-	  return int(res)
+    for i, size := 1, len(prices); i < size; i++ {
+        res += max(0, prices[i]-prices[i-1])
+    }
+
+    return res
 }
 ```
 :::
 
 ### 方法 2: 动态规划
+::: code-tabs
+@tab Rust
+```rust
+pub fn max_profit(prices: Vec<i32>) -> i32 {
+    let len = prices.len();
+    let mut dp = vec![[0; 2]; len];
+    (dp[0][0], dp[0][1]) = (0, -prices[0]);
+
+    for i in 1..len {
+        dp[i][0] = std::cmp::max(dp[i-1][0], dp[i-1][1] + prices[i]);
+        dp[i][1] = std::cmp::max(dp[i-1][1], dp[i-1][0] - prices[i]);
+    }
+
+    dp[len -1][0]
+}
+```
+
+@tab Java
+```java
+public int maxProfit(int[] prices) {
+    int len = prices.length;
+    int[][] dp = new int[len][2];
+    dp[0][0] = 0;
+    dp[0][1] = -prices[0];
+
+    for (int i = 1; i < len; i++) {
+        dp[i][0] = Math.max(dp[i-1][0], dp[i-1][1] + prices[i]);
+        dp[i][1] = Math.max(dp[i-1][1], dp[i-1][0] - prices[i]);
+    }
+
+    return dp[len-1][0];
+}
+```
+
+@tab Go
+```go
+func maxProfit(prices []int) int {
+    size := len(prices)
+    dp := make([][2]int, size)
+    dp[0][0], dp[0][1] = 0, -prices[0]
+
+    for i := 1; i < size; i++ {
+        dp[i][0] = max(dp[i-1][0], dp[i-1][1]+prices[i])
+        dp[i][1] = max(dp[i-1][1], dp[i-1][0]-prices[i])
+    }
+
+    return dp[size-1][0]
+}
+```
+:::
+
+### 方法 3: 优化的动态规划
 ::: code-tabs
 @tab Rust
 ```rust
@@ -123,15 +175,13 @@ public int maxProfit(int[] prices) {
 @tab Go
 ```go
 func maxProfit(prices []int) int {
-	  dp0, dp1 := 0.0, float64(-prices[0])
-	  
+    dp0, dp1 := 0, -prices[0]
+
     for i, size := 1, len(prices); i < size; i++ {
-	  	  newDp0 := math.Max(dp0, dp1+float64(prices[i]))
-	  	  newDp1 := math.Max(dp1, dp0-float64(prices[i]))
-	  	  dp0, dp1 = newDp0, newDp1
-	  }
-	  
-    return int(dp0)
+        dp0, dp1 = max(dp0, dp1+prices[i]), max(dp1, dp0-prices[i])
+    }
+
+    return dp0
 }
 ```
 :::
