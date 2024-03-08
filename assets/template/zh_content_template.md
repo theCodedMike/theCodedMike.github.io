@@ -41,6 +41,10 @@ tag:
 @tab Java
 ```java
 ```
+
+@tab Go
+```go
+```
 :::
 
 ### 方法 2: 双指针
@@ -51,5 +55,9 @@ tag:
 
 @tab Java
 ```java
+```
+
+@tab Go
+```go
 ```
 :::

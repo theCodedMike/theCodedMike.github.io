@@ -27,7 +27,7 @@ As mentioned earlier, the greedy algorithm doesn't always produce the optimal so
 [738: Monotone Increasing Digits](738_monotone_increasing_digits.md)
 [122: Best Time to Buy and Sell Stock II](122_best_time_to_buy_and_sell_stock_ii.md)
 [714: Best Time to Buy and Sell Stock with Transaction Fee](714_best_time_to_buy_and_sell_stock_with_transaction_fee.md)
-[135: Candy]
+[135: Candy](135_candy.md)
 [406: Queue Reconstruction by Height]
 [55: Jump Game]
 [45: Jump Game II]

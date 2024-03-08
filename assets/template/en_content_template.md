@@ -41,6 +41,10 @@ Explanation:
 @tab Java
 ```java
 ```
+
+@tab Go
+```go
+```
 :::
 
 ### Approach 2: Two Pointers
@@ -51,5 +55,9 @@ Explanation:
 
 @tab Java
 ```java
+```
+
+@tab Go
+```go
 ```
 :::
