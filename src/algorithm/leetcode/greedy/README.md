@@ -29,7 +29,7 @@ As mentioned earlier, the greedy algorithm doesn't always produce the optimal so
 [714: Best Time to Buy and Sell Stock with Transaction Fee](714_best_time_to_buy_and_sell_stock_with_transaction_fee.md)
 [135: Candy](135_candy.md)
 [406: Queue Reconstruction by Height](406_queue_reconstruction_by_height.md)
-[55: Jump Game]
+[55: Jump Game](55_jump_game.md)
 [45: Jump Game II]
 [452: Minimum Number of Arrows to Burst Balloons]
 [435: Non-overlapping Intervals]

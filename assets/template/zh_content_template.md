@@ -33,31 +33,6 @@ tag:
 
 ## 二、题解
 ### 方法 1: 暴力解法
-::: code-tabs
-@tab Rust
-```rust
-```
 
-@tab Java
-```java
-```
-
-@tab Go
-```go
-```
-:::
 
 ### 方法 2: 双指针
-::: code-tabs
-@tab Rust
-```rust
-```
-
-@tab Java
-```java
-```
-
-@tab Go
-```go
-```
-:::

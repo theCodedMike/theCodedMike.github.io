@@ -32,7 +32,7 @@ sticky: false
 [714: 买卖股票的最佳时机含手续费](714_best_time_to_buy_and_sell_stock_with_transaction_fee.md)
 [135: 分发糖果](135_candy.md)
 [406: 根据身高重建队列](406_queue_reconstruction_by_height.md)
-[55: 跳跃游戏]
+[55: 跳跃游戏](55_jump_game.md)
 [45: 跳跃游戏II]
 [452: 用最少数量的箭引爆气球]
 [435: 无重叠区间]
