@@ -33,7 +33,7 @@ sticky: false
 [135: 分发糖果](135_candy.md)
 [406: 根据身高重建队列](406_queue_reconstruction_by_height.md)
 [55: 跳跃游戏](55_jump_game.md)
-[45: 跳跃游戏II]
+[45: 跳跃游戏II](45_jump_game_ii.md)
 [452: 用最少数量的箭引爆气球]
 [435: 无重叠区间]
 [763: 划分字母区间]
