@@ -31,7 +31,7 @@ As mentioned earlier, the greedy algorithm doesn't always produce the optimal so
 [406: Queue Reconstruction by Height](406_queue_reconstruction_by_height.md)
 [55: Jump Game](55_jump_game.md)
 [45: Jump Game II](45_jump_game_ii.md)
-[452: Minimum Number of Arrows to Burst Balloons]
+[452: Minimum Number of Arrows to Burst Balloons](452_minimum_number_of_arrows_to_burst_balloons.md)
 [435: Non-overlapping Intervals]
 [763: Partition Labels]
 [56: Merge Intervals]
