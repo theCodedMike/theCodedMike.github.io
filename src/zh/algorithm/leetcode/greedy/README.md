@@ -37,7 +37,7 @@ sticky: false
 [452: 用最少数量的箭引爆气球](452_minimum_number_of_arrows_to_burst_balloons.md)
 [435: 无重叠区间](435_non_overlapping_intervals.md)
 [763: 划分字母区间](763_partition_labels.md)
-[56: 合并区间]
+[56: 合并区间](56_merge_intervals.md)
 [53: 最大子序和]
 [134: 加油站]
 [968: 监控二叉树]
