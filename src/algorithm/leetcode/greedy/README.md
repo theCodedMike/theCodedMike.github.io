@@ -33,7 +33,7 @@ As mentioned earlier, the greedy algorithm doesn't always produce the optimal so
 [45: Jump Game II](45_jump_game_ii.md)
 [452: Minimum Number of Arrows to Burst Balloons](452_minimum_number_of_arrows_to_burst_balloons.md)
 [435: Non-overlapping Intervals](435_non_overlapping_intervals.md)
-[763: Partition Labels]
+[763: Partition Labels](763_partition_labels.md)
 [56: Merge Intervals]
 [53: Maximum Subarray]
 [134: Gas Station]
