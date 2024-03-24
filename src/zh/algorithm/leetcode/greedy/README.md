@@ -38,7 +38,7 @@ sticky: false
 [435: 无重叠区间](435_non_overlapping_intervals.md)
 [763: 划分字母区间](763_partition_labels.md)
 [56: 合并区间](56_merge_intervals.md)
-[53: 最大子序和]
+[53: 最大子序和](53_maximum_subarray.md)
 [134: 加油站]
 [968: 监控二叉树]
 

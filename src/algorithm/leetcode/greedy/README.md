@@ -35,7 +35,7 @@ As mentioned earlier, the greedy algorithm doesn't always produce the optimal so
 [435: Non-overlapping Intervals](435_non_overlapping_intervals.md)
 [763: Partition Labels](763_partition_labels.md)
 [56: Merge Intervals](56_merge_intervals.md)
-[53: Maximum Subarray]
+[53: Maximum Subarray](53_maximum_subarray.md)
 [134: Gas Station]
 [968: Binary Tree Cameras]
 
