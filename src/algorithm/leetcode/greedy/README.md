@@ -36,7 +36,7 @@ As mentioned earlier, the greedy algorithm doesn't always produce the optimal so
 [763: Partition Labels](763_partition_labels.md)
 [56: Merge Intervals](56_merge_intervals.md)
 [53: Maximum Subarray](53_maximum_subarray.md)
-[134: Gas Station]
+[134: Gas Station](134_gas_station.md)
 [968: Binary Tree Cameras]
 
 ## Summary
