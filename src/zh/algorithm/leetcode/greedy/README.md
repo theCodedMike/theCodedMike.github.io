@@ -40,6 +40,6 @@ sticky: false
 [56: 合并区间](56_merge_intervals.md)
 [53: 最大子序和](53_maximum_subarray.md)
 [134: 加油站](134_gas_station.md)
-[968: 监控二叉树]
+[968: 监控二叉树](968_binary_tree_cameras.md)
 
 ## 总结
