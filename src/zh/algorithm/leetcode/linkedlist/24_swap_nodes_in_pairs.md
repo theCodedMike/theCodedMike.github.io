@@ -38,15 +38,40 @@ tag:
 - 递归
 
 ## 二、题解
-### 方法 1: 迭代
 ::: code-tabs
-@tab Rust
+@tab ListNode(Rust)
 ```rust
+#[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
     pub next: Option<Box<ListNode>>,
 }
 
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        ListNode { next: None, val }
+    }
+}
+```
+
+@tab ListNode(Java)
+```java
+public class ListNode {
+    int val;
+    ListNode next;
+
+    public ListNode() {}
+    public ListNode(int val) { this.val = val; }
+    public ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+}
+```
+:::
+
+### 方法 1: 迭代
+::: code-tabs
+@tab Rust
+```rust
 pub fn swap_pairs(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     let mut dummy = ListNode::new(-1);
     dummy.next = head;
@@ -73,11 +98,6 @@ pub fn swap_pairs(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
 
 @tab Java
 ```java
-public class ListNode {
-     int val;
-     ListNode next;
-}
-
 public ListNode swapPairs(ListNode head) {
     ListNode dummy = new ListNode(-1, head);
     ListNode temp = dummy;
@@ -103,11 +123,6 @@ public ListNode swapPairs(ListNode head) {
 ::: code-tabs
 @tab Rust
 ```rust
-pub struct ListNode {
-    pub val: i32,
-    pub next: Option<Box<ListNode>>,
-}
-
 pub fn swap_pairs(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     const RECURSION_HELPER: fn(Option<Box<ListNode>>) -> Option<Box<ListNode>> =
         |curr| match curr {
@@ -128,11 +143,6 @@ pub fn swap_pairs(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
 
 @tab Java
 ```java
-public class ListNode {
-     int val;
-     ListNode next;
-}
-
 Function<ListNode, ListNode> recursionHelper = (curr) -> {
     if (curr == null) {
         return null;

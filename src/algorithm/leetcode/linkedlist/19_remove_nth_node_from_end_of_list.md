@@ -43,19 +43,36 @@ Could you do this in one pass?
 - Two Pointers
 
 ## II Solution
-```text
-// for Rust
+::: code-tabs
+@tab ListNode(Rust)
+```rust
+#[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
     pub next: Option<Box<ListNode>>,
 }
 
-// for Java
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        ListNode { next: None, val }
+    }
+}
+```
+
+@tab ListNode(Java)
+```java
 public class ListNode {
     int val;
     ListNode next;
+
+    public ListNode() {}
+    public ListNode(int val) { this.val = val; }
+    public ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
 ```
+:::
+
 ### Approach 1: Calculate Length of Linked List
 ::: code-tabs
 @tab Rust
