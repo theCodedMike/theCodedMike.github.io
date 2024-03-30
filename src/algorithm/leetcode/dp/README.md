@@ -27,7 +27,7 @@ Dynamic programming is an optimization technique used when solving problems that
 ## Exercise
 ### Fundamental Problems
 [509: Fibonacci Number](509_fibonacci_number.md)
-[70: Climbing Stairs]()
+[70: Climbing Stairs](70_climbing_stairs.md)
 [1137: N-th Tribonacci Number]()
 [746: Min Cost Climbing Stairs]()
 [740: Delete and Earn]()
