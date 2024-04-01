@@ -227,3 +227,73 @@ func climbStairs(n int) int {
 }
 ```
 :::
+
+### 方法 4: 排列组合
+::: code-tabs
+@tab Rust
+```rust
+pub fn climb_stairs(n: i32) -> i32 {
+    let n = n as i64;
+    let calc = |mut a, b| {
+        let mut ans = 1;
+        for i in 1..=b {
+            ans *= a;
+            a -= 1;
+            ans /= i;
+        }
+        ans
+    };
+
+    let mut res = 1;
+    for i in 1..=n / 2 {
+        res += calc(n - i, i);
+    }
+
+    res as i32
+}
+```
+
+@tab Java
+```java
+public int climbStairs(int n) {
+    BiFunction<Integer, Integer, Long> calc = (a, b) -> {
+        long ans = 1;
+        for (int i = 1; i <= b; i++) {
+            ans *= a;
+            a--;
+            ans /= i;
+        }
+        return ans;
+    };
+
+    long res = 1;
+    for (int i = 1, times = n / 2; i <= times; i++) {
+        res += calc.apply(n - i, i);
+    }
+
+    return (int) res;
+}
+```
+
+@tab Go
+```go
+func climbStairs(n int) int {
+    calc := func(a, b int) int {
+        ans := 1
+        for i := 1; i <= b; i++ {
+            ans *= a
+            a--
+            ans /= i
+        }
+        return ans
+    }
+    
+    res := 1
+    for i, times := 1, n/2; i <= times; i++ {
+        res += calc(n-i, i)
+    }
+    
+    return res
+}
+```
+:::

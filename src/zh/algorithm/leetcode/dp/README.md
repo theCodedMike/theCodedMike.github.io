@@ -35,7 +35,7 @@ sticky: false
 ### 基础题目
 [509: 斐波那契数](509_fibonacci_number.md)
 [70: 爬楼梯](70_climbing_stairs.md)
-[1137: 第N个泰波那契数]()
+[1137: 第N个泰波那契数](1137_nth_tribonacci_number.md)
 [746: 使用最小花费爬楼梯]()
 [740: 删除并获得点数]()
 [198: 打家劫舍]()
