@@ -32,7 +32,7 @@ Dynamic programming is an optimization technique used when solving problems that
 [746: Min Cost Climbing Stairs](746_min_cost_climbing_stairs.md)
 [740: Delete and Earn](740_delete_and_earn.md)
 [198: House Robber](198_house_robber.md)
-[343: Integer Break]()
+[343: Integer Break](343_integer_break.md)
 
 ### Matrix
 [62: Unique Paths]()

@@ -39,7 +39,7 @@ sticky: false
 [746: 使用最小花费爬楼梯](746_min_cost_climbing_stairs.md)
 [740: 删除并获得点数](740_delete_and_earn.md)
 [198: 打家劫舍](198_house_robber.md)
-[343: 整数拆分]()
+[343: 整数拆分](343_integer_break.md)
 
 ### 矩阵
 [62: 不同路径]()
