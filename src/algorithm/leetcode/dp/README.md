@@ -35,7 +35,7 @@ Dynamic programming is an optimization technique used when solving problems that
 [343: Integer Break](343_integer_break.md)
 
 ### Matrix
-[62: Unique Paths]()
+[62: Unique Paths](62_unique_paths.md)
 [64: Minimum Path Sum]()
 [63: Unique Paths II]()
 [120: Triangle]()
