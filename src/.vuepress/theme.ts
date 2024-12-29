@@ -24,7 +24,7 @@ export default hopeTheme({
     name: "Mike",
     intro: "https://github.com/theCodedMike",
     medias: {
-      Email: "stone_is_hard@outlook.com",
+      Email: "lixiaofeng1115@outlook.com",
       GitHub: "https://github.com/theCodedMike"
     },
   },
