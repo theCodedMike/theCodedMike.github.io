@@ -225,9 +225,8 @@ List<String> dfsIter(TreeNode root) {
     List<List<Integer>> paths = new ArrayList<>();
 
     if (root != null) {
-        Deque<Object[]> stack = new ArrayDeque<>() {{
-            this.push(new Object[]{root, new ArrayList<Integer>()});
-        }};
+        Deque<Object[]> stack = new ArrayDeque<>();
+        stack.push(new Object[]{root, new ArrayList<Integer>()});
 
         while (!stack.isEmpty()) {
             Object[] objs = stack.pop();
@@ -313,9 +312,8 @@ public List<String> binaryTreePaths(TreeNode root) {
     List<List<Integer>> paths = new ArrayList<>();
 
     if (root != null) {
-        Deque<Object[]> queue = new ArrayDeque<>() {{
-            this.addLast(new Object[]{root, new ArrayList<Integer>()});
-        }};
+        Deque<Object[]> queue = new ArrayDeque<>();
+        queue.addLast(new Object[]{root, new ArrayList<Integer>()});
 
         while (!queue.isEmpty()) {
             Object[] objs = queue.removeFirst();

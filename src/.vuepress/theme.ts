@@ -10,7 +10,7 @@ export default hopeTheme({
     //url: "https://mister-hope.com",
   },
 
-  iconAssets: "//at.alicdn.com/t/font_2410206_vuzkjonf4s9.css",
+  //iconAssets: "//at.alicdn.com/t/font_2410206_vuzkjonf4s9.css",
 
   //iconPrefix: "iconify icon-",
 
@@ -70,7 +70,7 @@ export default hopeTheme({
       displayFooter: true,
 
       blog: {
-        description: "一名后端开发者",
+        description: "之前搞后端，现在搞游戏",
         intro: "/zh/intro.html",
       },
 
@@ -83,13 +83,85 @@ export default hopeTheme({
 
   encrypt: {
     config: {
-      "/demo/encrypt.html": ["1234"],
-      "/zh/demo/encrypt.html": ["1234"],
+      "/demo/encrypt.html": {
+        hint: "PWD: 1234",
+        password: "1234",
+      },
+      "/zh/demo/encrypt.html": {
+        hint: "密码: 1234",
+        password: "1234",
+      },
+    },
+  },
+
+  // These features are enabled for demo, only preserve features you need here
+  markdown: {
+    align: true,
+    attrs: true,
+    codeTabs: true,
+    component: true,
+    demo: true,
+    echarts: true,
+    figure: true,
+    flowchart: true,
+    gfm: true,
+    imgLazyload: true,
+    imgSize: true,
+    include: true,
+    plantuml: true,
+    mark: true,
+    mermaid: true,
+    spoiler: true,
+    playground: {
+      presets: ["ts", "vue"],
+    },
+    stylize: [
+      {
+        matcher: "Recommended",
+        replacer: ({ tag }) => {
+          if (tag === "em")
+            return {
+              tag: "Badge",
+              attrs: { type: "tip" },
+              content: "Recommended",
+            };
+        },
+      },
+    ],
+    sub: true,
+    sup: true,
+    tabs: true,
+    vPre: true,
+    vuePlayground: true,
+    math: {
+      type: "katex",
+      //or type: "mathjax",
+    },
+    chartjs: true,
+    sandpack: true,
+    revealjs: {
+      plugins: ["highlight", "math", "search", "notes", "zoom"],
     },
   },
 
   plugins: {
     blog: true,
+
+    // Install @waline/client before enabling it
+    // Note: This is for testing ONLY!
+    // You MUST generate and use your own comment service in production.
+    // comment: {
+    //   provider: "Waline",
+    //   serverURL: "https://waline-comment.vuejs.press",
+    // },
+
+    components: {
+      components: ["Badge", "VPCard"],
+    },
+
+    icon: {
+      prefix: "fa6-solid:",
+    },
 
     comment: {
       // You should generate and use your own comment service
@@ -100,47 +172,54 @@ export default hopeTheme({
       categoryId: "DIC_kwDOKWIS0M4CZkgq"
     },
 
-    // all features are enabled for demo, only preserve features you need here
-    mdEnhance: {
-      align: true,
-      attrs: true,
-      chart: true,
-      codetabs: true,
-      demo: true,
-      echarts: true,
-      figure: true,
-      flowchart: true,
-      gfm: true,
-      imgLazyload: true,
-      imgSize: true,
-      include: true,
-      katex: true,
-      mark: true,
-      mermaid: true,
-      playground: {
-        presets: ["ts", "vue"],
-      },
-      presentation: ["highlight", "math", "search", "notes", "zoom"],
-      stylize: [
-        {
-          matcher: "Recommended",
-          replacer: ({ tag }) => {
-            if (tag === "em")
-              return {
-                tag: "Badge",
-                attrs: { type: "tip" },
-                content: "Recommended",
-              };
+    docsearch: {
+      appId: "F1LR53KAZA",
+      apiKey: "173149233160359af4adf74e34c554d8",
+      indexName: "thecodedmikeio",
+      locales: {
+        "/zh/": {
+          placeholder: "搜索",
+          translations: {
+            button: {
+              buttonText: "搜索",
+              buttonAriaLabel: "搜索",
+            },
+            modal: {
+              searchBox: {
+                resetButtonTitle: "清除查询条件",
+                resetButtonAriaLabel: "清除查询条件",
+                cancelButtonText: "取消",
+                cancelButtonAriaLabel: "取消",
+              },
+              startScreen: {
+                recentSearchesTitle: "搜索历史",
+                noRecentSearchesText: "没有搜索历史",
+                saveRecentSearchButtonTitle: "保存至搜索历史",
+                removeRecentSearchButtonTitle: "从搜索历史中移除",
+                favoriteSearchesTitle: "收藏",
+                removeFavoriteSearchButtonTitle: "从收藏中移除",
+              },
+              errorScreen: {
+                titleText: "无法获取结果",
+                helpText: "你可能需要检查你的网络连接",
+              },
+              footer: {
+                selectText: "选择",
+                navigateText: "切换",
+                closeText: "关闭",
+                searchByText: "搜索提供者",
+              },
+              noResultsScreen: {
+                noResultsText: "无法找到相关结果",
+                suggestedQueryText: "你可以尝试查询",
+                reportMissingResultsText: "你认为该查询应该有结果？",
+                reportMissingResultsLinkText: "点击反馈",
+              },
+            },
           },
         },
-      ],
-      sub: true,
-      sup: true,
-      tabs: true,
-      vPre: true,
-      vuePlayground: true,
-    },
-
+      },
+    }
     // uncomment these if you want a PWA
     // pwa: {
     //   favicon: "/favicon.ico",

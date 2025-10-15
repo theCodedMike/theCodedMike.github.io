@@ -439,9 +439,8 @@ boolean bfsIter1(TreeNode root, int targetSum) {
     List<List<Integer>> paths = new ArrayList<>();
 
     if (root != null) {
-        Deque<Object[]> queue = new ArrayDeque<>() {{
-            this.addLast(new Object[]{root, new ArrayList<Integer>()});
-        }};
+        Deque<Object[]> queue = new ArrayDeque<>();
+        queue.addLast(new Object[]{root, new ArrayList<Integer>()});
 
         while (!queue.isEmpty()) {
             Object[] objs = queue.removeFirst();
@@ -473,9 +472,8 @@ boolean bfsIter1(TreeNode root, int targetSum) {
  */
 boolean bfsIter2(TreeNode root, int targetSum) {
     if (root != null) {
-        Deque<Object[]> queue = new ArrayDeque<>() {{
-            this.addLast(new Object[]{root, 0});
-        }};
+        Deque<Object[]> queue = new ArrayDeque<>();
+        queue.addLast(new Object[]{root, 0});
 
         while (!queue.isEmpty()) {
             Object[] objs = queue.removeFirst();
