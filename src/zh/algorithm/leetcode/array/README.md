@@ -10,6 +10,7 @@ sticky: false
 ---
 
 ## 数组的理论知识
+
 当给数组分配内存时，数组中的各个元素是相邻的，所以可以通过下标来访问其中的某个元素。
 ![Array Memory Allocation](../../../../../assets/leetcode/array_memory_allocation.jpg)
 
@@ -25,7 +26,9 @@ assert_eq(nums[6], xx); // ERROR，index out of bounds
 ```
 
 ## 习题
+
 ### 二分查找
+
 [704: 二分查找](704_binary_search.md)
 [35: 搜索插入位置](35_search_insert_position.md)
 [34: 在排序数组中查找元素的第一个和最后一个位置](34_find_first_and_last_position_of_element_in_sorted_array.md)
@@ -33,20 +36,24 @@ assert_eq(nums[6], xx); // ERROR，index out of bounds
 [367: 有效的完全平方数](367_valid_perfect_square.md)
 
 ### 移除元素
+
 [27: 移除元素](27_remove_element.md)
 [26: 删除有序数组中的重复项](26_remove_duplicates_from_sorted_array.md)
 [283: 移动零](283_move_zeroes.md)
 [844: 比较含退格的字符串](844_backspace_string_compare.md)
 
 ### 有序数组的平方
+
 [977: 有序数组的平方](977_squares_of_a_sorted_array.md)
 
 ### 长度最小的子数组
+
 [209: 长度最小的子数组](209_minimum_size_subarray_sum.md)
 [904: 水果成篮](904_fruit_into_baskets.md)
 [76: 最小覆盖子串](76_minimum_window_substring.md)
 
 ### 螺旋矩阵
+
 [54: 螺旋矩阵](54_spiral_matrix.md)
 [59: 螺旋矩阵II](59_spiral_matrix_ii.md)
 
