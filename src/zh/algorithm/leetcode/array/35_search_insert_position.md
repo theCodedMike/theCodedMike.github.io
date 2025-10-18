@@ -13,6 +13,7 @@ tag:
 
 
 ## 一、题目描述
+
 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。
 
 请必须使用时间复杂度为 O(log n) 的算法。
@@ -45,24 +46,28 @@ tag:
 
 - -10⁴ <= target <= 10⁴
 
-**相关主题**
+**相关主题：**
 
 - 数组
 - 二分查找
 
 ## 二、题解
+
 ### 方法 1: 二分查找
 
 ::: code-tabs
 @tab Rust
+
 ```rust
 pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
-    //Self::binary_search_1(nums, target)
-    Self::binary_search_2(nums, target)
+    //Self::left_close_right_open(nums, target)
+    Self::left_close_right_close(nums, target)
 }
-pub fn binary_search_1(nums: Vec<i32>, target: i32) -> i32 {
+
+pub fn left_close_right_open(nums: Vec<i32>, target: i32) -> i32 {
     let mut left = 0;
     let mut right = nums.len();
+
     while left < right {
         let mid = left + (right - left) / 2;
         if target < nums[mid] {
@@ -73,11 +78,14 @@ pub fn binary_search_1(nums: Vec<i32>, target: i32) -> i32 {
             return mid as i32;
         }
     }
+
     left as i32
 }
-pub fn binary_search_2(nums: Vec<i32>, target: i32) -> i32 {
+
+pub fn left_close_right_close(nums: Vec<i32>, target: i32) -> i32 {
     let mut left = 0_i32;
     let mut right = nums.len() as i32 - 1;
+
     while left <= right {
         let mid = left + (right - left) / 2;
         if target < nums[mid as usize] {
@@ -88,19 +96,23 @@ pub fn binary_search_2(nums: Vec<i32>, target: i32) -> i32 {
             return mid;
         }
     }
+
     left
 }
 ```
 
 @tab Java
+
 ```java
 public int searchInsert(int[] nums, int target) {
-    //return this.binarySearch1(nums, target);
-    return this.binarySearch2(nums, target);
+    //return this.leftCloseRightOpen(nums, target);
+    return this.leftCloseRightClose(nums, target);
 }
-public int binarySearch1(int[] nums, int target) {
+
+public int leftCloseRightOpen(int[] nums, int target) {
     int left = 0;
     int right = nums.length;
+
     while (left < right) {
         int mid = left + (right - left) / 2;
         if (target < nums[mid]) {
@@ -111,11 +123,14 @@ public int binarySearch1(int[] nums, int target) {
             return mid;
         }
     }
+
     return left;
 }
-public int binarySearch2(int[] nums, int target) {
+
+public int leftCloseRightClose(int[] nums, int target) {
     int left = 0;
     int right = nums.length - 1;
+
     while (left <= right) {
         int mid = left + (right - left) / 2;
         if (target < nums[mid]) {
@@ -126,7 +141,139 @@ public int binarySearch2(int[] nums, int target) {
             return mid;
         }
     }
+
     return left;
 }
 ```
+
+@tab Go
+
+```go
+func searchInsert(nums []int, target int) int {
+    //return leftCloseRightOpen(nums, target)
+    return leftCloseRightClose(nums, target)
+}
+
+func leftCloseRightOpen(nums []int, target int) int {
+    left, right := 0, len(nums)
+
+    for left < right {
+        mid := left + (right-left)/2
+        if target < nums[mid] {
+            right = mid
+        } else if nums[mid] < target {
+            left = mid + 1
+        } else {
+            return mid
+        }
+    }
+
+    return left
+}
+
+func leftCloseRightClose(nums []int, target int) int {
+    left, right := 0, len(nums)-1
+
+    for left <= right {
+        mid := left + (right-left)/2
+        if target < nums[mid] {
+            right = mid - 1
+        } else if nums[mid] < target {
+            left = mid + 1
+        } else {
+            return mid
+        }
+    }
+
+    return left
+}
+```
+
+@tab C\#
+
+```csharp
+public int SearchInsert(int[] nums, int target)
+{
+    //return LeftCloseRightOpen(nums, target);
+    return LeftCloseRightClose(nums, target);
+}
+
+private int LeftCloseRightOpen(int[] nums, int target)
+{
+    (int left, int right) = (0, nums.Length);
+
+    while (left < right)
+    {
+        int mid = left + (right - left) / 2;
+        if (target < nums[mid])
+            right = mid;
+        else if (nums[mid] < target)
+            left = mid + 1;
+        else
+            return mid;
+    }
+
+    return left;
+}
+
+private int LeftCloseRightClose(int[] nums, int target)
+{
+    (int left, int right) = (0, nums.Length - 1);
+
+    while (left <= right)
+    {
+        int mid = left + (right - left) / 2;
+        if (target < nums[mid])
+            right = mid - 1;
+        else if (nums[mid] < target)
+            left = mid + 1;
+        else
+            return mid;
+    }
+
+    return left;
+}
+```
+
+@tab C++
+
+```cpp
+int searchInsert(vector<int>& nums, int target) {
+    //return leftCloseRightOpen(nums, target);
+    return leftCloseRightClose(nums, target);
+}
+
+int leftCloseRightOpen(const vector<int>& nums, const int target) {
+    auto[left, right] = std::make_pair(0, static_cast<int>(nums.size()));
+
+    while (left < right) {
+        int mid = left + (right - left) / 2;
+        if (target < nums[mid])
+            right = mid;
+        else if (nums[mid] < target)
+            left = mid + 1;
+        else
+            return mid;
+    }
+
+    return left;
+}
+
+int leftCloseRightClose(const vector<int>& nums, const int target) {
+    auto[left, right] = std::make_pair(0, static_cast<int>(nums.size()) - 1);
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (target < nums[mid])
+            right = mid - 1;
+        else if (nums[mid] < target)
+            left = mid + 1;
+        else
+            return mid;
+    }
+
+    return left;
+}
+```
+
 :::
