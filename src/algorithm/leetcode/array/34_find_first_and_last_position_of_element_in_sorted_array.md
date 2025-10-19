@@ -12,6 +12,7 @@ tag:
 ---
 
 ## I Problem
+
 Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
 
 If target is not found in the array, return [-1, -1].
@@ -37,21 +38,22 @@ Output: [-1,-1]
 - nums is a non-decreasing array
 - -10⁹ <= target <= 10⁹
 
-**Related Topics**
+**Related Topics:**
 
 - Array
 - Binary Search
 
 ## II Solution
+
 ### Approach 1: Binary Search
+
 ::: code-tabs
 @tab Rust
+
 ```rust
 pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
     let mut res = vec![-1, -1];
-    let len = nums.len();
-    let mut left = 0;
-    let mut right = len;
+    let (mut left, mut right) = (0, nums.len());
 
     while left < right {
         let mid = left + (right - left) / 2;
@@ -60,11 +62,9 @@ pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
         } else if nums[mid] < target {
             left = mid + 1;
         } else {
-            // num[mid]肯定等于target，往左右两边遍历
-            let mut prev = mid;
-            let mut next = mid;
-            let mut move_prev = false;
-            let mut move_next = false;
+            let (mut prev, mut next) = (mid, mid);
+            let (mut move_prev, mut move_next) = (false, false);
+
             loop {
                 move_prev = false;
                 if prev != 0 && nums[prev - 1] == target {
@@ -72,7 +72,7 @@ pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
                     prev -= 1;
                 }
                 move_next = false;
-                if next != len - 1 && nums[next + 1] == target {
+                if next != nums.len() - 1 && nums[next + 1] == target {
                     move_next = true;
                     next += 1;
                 }
@@ -80,6 +80,7 @@ pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
                     break;
                 }
             }
+
             res[0] = prev as i32;
             res[1] = next as i32;
             break;
@@ -91,6 +92,7 @@ pub fn search_range(nums: Vec<i32>, target: i32) -> Vec<i32> {
 ```
 
 @tab Java
+
 ```java
 public int[] searchRange(int[] nums, int target) {
     int[] res = new int[] {-1, -1};
@@ -108,6 +110,7 @@ public int[] searchRange(int[] nums, int target) {
             int next = mid;
             boolean move_prev = false;
             boolean move_next = false;
+
             while (true) {
                 move_prev = false;
                 if (prev != 0 && nums[prev - 1] == target) {
@@ -123,6 +126,7 @@ public int[] searchRange(int[] nums, int target) {
                     break;
                 }
             }
+
             res[0] = prev;
             res[1] = next;
             break;
@@ -132,4 +136,142 @@ public int[] searchRange(int[] nums, int target) {
     return res;
 }
 ```
+
+@tab Go
+
+```go
+func searchRange(nums []int, target int) []int {
+    res := []int{-1, -1}
+    left, right := 0, len(nums)
+
+    for left < right {
+        mid := left + (right-left)/2
+        if target < nums[mid] {
+            right = mid
+        } else if nums[mid] < target {
+            left = mid + 1
+        } else {
+            prev, next := mid, mid
+            movePrev, moveNext := false, false
+
+            for {
+                movePrev = false
+                moveNext = false
+
+                if prev != 0 && nums[prev-1] == target {
+                    movePrev = true
+                    prev--
+                }
+                if next != len(nums)-1 && nums[next+1] == target {
+                    moveNext = true
+                    next++
+                }
+
+                if !movePrev && !moveNext {
+                    break
+                }
+            }
+
+            res[0] = prev
+            res[1] = next
+            break
+        }
+    }
+
+    return res
+}
+```
+
+@tab C\#
+
+```csharp
+public int[] SearchRange(int[] nums, int target)
+{
+    (int left, int right) = (0, nums.Length);
+    int[] res = [-1, -1];
+
+    while (left < right)
+    {
+        int mid = left + (right - left) / 2;
+        if (target < nums[mid])
+            right = mid;
+        else if (nums[mid] < target)
+            left = mid + 1;
+        else
+        {
+            (int prev, int next) = (mid, mid);
+            (bool movePrev, bool moveNext) = (false, false);
+
+            while (true)
+            {
+                movePrev = false;
+                moveNext = false;
+                
+                if (prev != 0 && nums[prev - 1] == target)
+                {
+                    movePrev = true;
+                    --prev;
+                }
+                if (next != nums.Length - 1 && nums[next + 1] == target)
+                {
+                    moveNext = true;
+                    ++next;
+                }
+                if (!movePrev && !moveNext)
+                    break;
+            }
+
+            res[0] = prev;
+            res[1] = next;
+            break;
+        }
+    }
+
+    return res;
+}
+```
+
+@tab C++
+
+```cpp
+vector<int> searchRange(vector<int>& nums, int target) {
+    const int size = static_cast<int>(nums.size());
+    auto[left, right] = std::make_pair(0, size);
+    vector<int> res = {-1, -1};
+
+    while (left < right) {
+        auto mid = left + (right - left) / 2;
+        if (target < nums[mid])
+            right = mid;
+        else if (nums[mid] < target)
+            left = mid + 1;
+        else {
+            auto[prev, next] = std::make_pair(mid, mid);
+            auto[move_prev, move_next] = std::make_pair(false, false);
+
+            while (true) {
+                move_prev = false;
+                move_next = false;
+                if (prev != 0 && nums[prev - 1] == target) {
+                    move_prev = true;
+                    --prev;
+                }
+                if (next != size - 1 && nums[next + 1] == target) {
+                    move_next = true;
+                    ++next;
+                }
+                if (!move_prev && !move_next)
+                    break;
+            }
+
+            res[0] = prev;
+            res[1] = next;
+            break;
+        }
+    }
+
+    return res;
+}
+```
+
 :::
