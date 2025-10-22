@@ -12,6 +12,7 @@ tag:
 ---
 
 ## I Problem
+
 Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The order of the elements may be changed. Then return the number of elements in nums which are not equal to val.
 
 Consider the number of elements in nums which are not equal to val be k, to get accepted, you need to do the following things:
@@ -39,15 +40,18 @@ It does not matter what you leave beyond the returned k (hence they are undersco
 - 0 <= nums[i] <= 50
 - 0 <= val <= 100
 
-**Related Topics**
+**Related Topics:**
 
 - Array
 - Two Pointers
 
 ## II Solution
-### Approach 1: Two Pointers
+
+### Approach 1: One Pointer
+
 ::: code-tabs
 @tab Rust
+
 ```rust
 pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
     let mut idx = 0;
@@ -64,6 +68,7 @@ pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
 ```
 
 @tab Java
+
 ```java
 public int removeElement(int[] nums, int val) {
     int idx = 0;
@@ -78,14 +83,71 @@ public int removeElement(int[] nums, int val) {
     return idx;
 }
 ```
+
+@tab Go
+
+```go
+func removeElement(nums []int, val int) int {
+    idx := 0
+
+    for i := 0; i < len(nums); i++ {
+        if nums[i] != val {
+            nums[idx] = nums[i]
+            idx++
+        }
+    }
+
+    return idx
+}
+```
+
+@tab C\#
+
+```csharp
+public int RemoveElement(int[] nums, int val)
+{
+    int idx = 0;
+
+    for (int i = 0; i < nums.Length; ++i)
+    {
+        if (nums[i] != val)
+        {
+            nums[idx] = nums[i];
+            ++idx;
+        }
+    }
+
+    return idx;
+}
+```
+
+@tab C++
+
+```cpp
+int removeElement(vector<int>& nums, int val) {
+    auto idx = 0;
+
+    for (auto i = 0; i < nums.size(); ++i) {
+        if (nums[i] != val) {
+            nums[idx] = nums[i];
+            ++idx;
+        }
+    }
+
+    return idx;
+}
+```
+
 :::
+
 ### Approach 2: Two Pointers - when elements to remove are rare
+
 ::: code-tabs
 @tab Rust
+
 ```rust
 pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
-    let mut idx = 0;
-    let mut len = nums.len();
+    let (mut idx, mut len) = (0, nums.len());
 
     while idx < len {
         if nums[idx] == val {
@@ -101,6 +163,7 @@ pub fn remove_element(nums: &mut Vec<i32>, val: i32) -> i32 {
 ```
 
 @tab Java
+
 ```java
 public int removeElement(int[] nums, int val) {
     int idx = 0;
@@ -118,4 +181,64 @@ public int removeElement(int[] nums, int val) {
     return len;
 }
 ```
+
+@tab Go
+
+```go
+func removeElement(nums []int, val int) int {
+    idx, size := 0, len(nums)
+
+    for idx < size {
+        if nums[idx] == val {
+            nums[idx] = nums[size-1]
+            size--
+        } else {
+            idx++
+        }
+    }
+
+    return size
+}
+```
+
+@tab C\#
+
+```csharp
+public int RemoveElement(int[] nums, int val)
+{
+    (int idx, int len) = (0, nums.Length);
+
+    while (idx < len)
+    {
+        if (nums[idx] == val)
+        {
+            nums[idx] = nums[len - 1];
+            --len;
+        }
+        else
+            ++idx;
+    }
+
+    return len;
+}
+```
+
+@tab C++
+
+```cpp
+int removeElement(vector<int>& nums, int val) {
+    auto[idx, len] = std::make_pair(0, nums.size());
+
+    while (idx < len) {
+        if (nums[idx] == val) {
+            nums[idx] = nums[len - 1];
+            --len;
+        } else
+            ++idx;
+    }
+
+    return len;
+}
+```
+
 :::
