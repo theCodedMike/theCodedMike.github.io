@@ -12,6 +12,7 @@ tag:
 ---
 
 ## 一、题目描述
+
 给你一个非严格递增排列的数组nums，请你原地删除重复出现的元素，使每个元素只出现一次，返回删除后数组的新长度。元素的相对顺序应该保持一致。然后返回nums中唯一元素的个数。
 
 考虑nums的唯一元素的数量为k，你需要做以下事情确保你的题解可以被通过：
@@ -35,20 +36,24 @@ tag:
 - -10⁴ <= nums[i] <= 10⁴
 - nums按非递减排序
 
-**相关主题**
+**相关主题：**
 
 - 数组
 - 双指针
 
 ## 二、题解
+
 ### 方法 1: 暴力解法
+
 ::: code-tabs
 @tab Rust
+
 ```rust
 pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
     let mut len = nums.len();
     let mut target = nums[0];
     let mut i = 1;
+
     while i < len {
         if nums[i] == target {
             for j in i..len {
@@ -60,15 +65,18 @@ pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
             i += 1;
         }
     }
+
     len as i32
 }
 ```
 
 @tab Java
+
 ```java
 public int removeDuplicates(int[] nums) {
     int len = nums.length;
     int target = nums[0];
+
     for (int i = 1; i < len; i++) {
         if (nums[i] == target) {
             for (int j = i; j < len; j++) {
@@ -80,38 +88,171 @@ public int removeDuplicates(int[] nums) {
             target = nums[i];
         }
     }
+
     return len;
 }
 ```
+
+@tab Go
+
+```go
+func removeDuplicates(nums []int) int {
+    size := len(nums)
+    target := nums[0]
+
+    for i := 1; i < size; i++ {
+        if nums[i] == target {
+            for j := i; j < size; j++ {
+                nums[j-1] = nums[j]
+            }
+            size--
+            i--
+        } else {
+            target = nums[i]
+        }
+    }
+
+    return size
+}
+```
+
+@tab C\#
+
+```csharp
+public int RemoveDuplicates(int[] nums)
+{
+    int len = nums.Length;
+    int target = nums[0];
+
+    for (int i = 1; i < len; ++i)
+    {
+        if (nums[i] == target)
+        {
+            for (int j = i; j < len; ++j)
+                nums[j - 1] = nums[j];
+            --len;
+            --i;
+        }
+        else
+            target = nums[i];
+    }
+
+    return len;
+}
+```
+
+@tab C++
+
+```cpp
+int removeDuplicates(vector<int>& nums) {
+    auto len = nums.size();
+    auto target = nums[0];
+
+    for (auto i = 1; i < len; ++i) {
+        if (nums[i] == target) {
+            for (auto j = i; j < len; ++j)
+                nums[j - 1] = nums[j];
+            --len;
+            --i;
+        } else
+            target = nums[i];
+    }
+
+    return len;
+}
+```
+
 :::
 
 ### 方法 2: 双指针
+
 ::: code-tabs
 @tab Rust
+
 ```rust
 pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
     let mut slow = 0;
+
     for fast in 1..nums.len() {
         if nums[fast] != nums[slow] {
             slow += 1;
             nums[slow] = nums[fast];
         }
     }
+    
     slow as i32 + 1
 }
 ```
 
 @tab Java
+
 ```java
 public int removeDuplicates(int[] nums) {
     int slow = 0;
+
     for (int fast = 1; fast < nums.length; fast++) {
         if (nums[fast] != nums[slow]) {
             ++slow;
             nums[slow] = nums[fast];
         }
     }
+
     return slow + 1;
 }
 ```
+
+@tab Go
+
+```go
+func removeDuplicates(nums []int) int {
+    slow := 0
+
+    for fast := 1; fast < len(nums); fast++ {
+        if nums[slow] != nums[fast] {
+            slow++
+            nums[slow] = nums[fast]
+        }
+    }
+
+    return slow + 1
+}
+```
+
+@tab C\#
+
+```csharp
+public int RemoveDuplicates(int[] nums)
+{
+    int slow = 0;
+
+    for (int fast = 1; fast < nums.Length; ++fast)
+    {
+        if (nums[slow] != nums[fast])
+        {
+            ++slow;
+            nums[slow] = nums[fast];
+        }
+    }
+
+    return slow + 1;
+}
+```
+
+@tab C++
+
+```cpp
+int removeDuplicates(vector<int>& nums) {
+    auto slow = 0;
+
+    for (auto fast = 1; fast < nums.size(); ++fast) {
+        if (nums[slow] != nums[fast]) {
+            ++slow;
+            nums[slow] = nums[fast];
+        }
+    }
+
+    return slow + 1;
+}
+```
+
 :::
