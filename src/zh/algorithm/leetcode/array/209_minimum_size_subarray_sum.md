@@ -14,19 +14,20 @@ tag:
 ---
 
 ## 一、题目描述
+
 给定一个含有 n 个正整数的数组和一个正整数 target。找出该数组中满足其总和大于等于 target 且长度最小的连续子数组 [nums[l], nums[l+1], ..., nums[r-1], nums[r]]，并返回其长度。如果不存在符合条件的子数组，则返回 0。
 
 **示例 1:**
-输入: target = 7, nums = [2,3,1,2,4,3]
+输入: target = 7, nums = [2, 3, 1, 2, 4, 3]
 输出: 2
-解释: 子数组[4,3]是该条件下的长度最小的子数组。
+解释: 子数组[4, 3]是该条件下的长度最小的子数组。
 
 **示例 2:**
-输入: target = 4, nums = [1,4,4]
+输入: target = 4, nums = [1, 4, 4]
 输出: 1
 
 **示例 3:**
-输入: target = 11, nums = [1,1,1,1,1,1,1,1]
+输入: target = 11, nums = [1, 1, 1, 1, 1, 1, 1, 1]
 输出: 0
 
 **提示:**
@@ -38,28 +39,31 @@ tag:
 **进阶:**
 如果你已经实现 O(n) 时间复杂度的解法, 请尝试设计一个 O(n*log(n)) 时间复杂度的解法。
 
-**相关主题**
+**相关主题：**
 
 - 数组
 - 二分查找
 - 滑动窗口
 - 前缀和
 
-
 ## 二、题解
+
 ### 方法 1: 暴力解法
+
 ::: code-tabs
 @tab Rust
+
 ```rust
 /// Time Limit Exceeded
 ///
-/// Time Complexity: O(n^3), Space complexity: O(1)
+/// Time Complexity: O(n^3)
+/// Space complexity: O(1)
 pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
     let len = nums.len();
 
     for width in 1..=len {
         let mut begin = 0;
-        let mut end = begin + width;
+        let mut end = width;
 
         while end <= len {
             let mut sum = 0;
@@ -80,6 +84,7 @@ pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
 ```
 
 @tab Java
+
 ```java
 // Time Limit Exceeded
 //
@@ -87,7 +92,7 @@ pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
 public int minSubArrayLen(int target, int[] nums) {
     for (int width = 1; width <= nums.length; width++) {
         int begin = 0;
-        int end = begin + width;
+        int end = width;
 
         while (end <= nums.length) {
             int sum = 0;
@@ -106,14 +111,95 @@ public int minSubArrayLen(int target, int[] nums) {
     return 0;
 }
 ```
+
+@tab Go
+
+```go
+func minSubArrayLen(target int, nums []int) int {
+    size := len(nums)
+
+    for width := 1; width <= size; width++ {
+        beg, end := 0, width
+
+        for end <= size {
+            sum := 0
+            for i := beg; i < end; i++ {
+                sum += nums[i]
+            }
+            if sum >= target {
+                return width
+            }
+
+            beg++
+            end = beg + width
+        }
+    }
+
+    return 0
+}
+```
+
+@tab C\#
+
+```csharp
+public int MinSubArrayLen(int target, int[] nums)
+{
+    for (int width = 1; width <= nums.Length; width++)
+    {
+        int beg = 0;
+        int end = width;
+        while (end <= nums.Length)
+        {
+            int sum = 0;
+            for (int i = beg; i < end; i++)
+                sum += nums[i];
+            if (sum >= target)
+                return width;
+
+            beg++;
+            end = beg + width;
+        }
+    }
+    
+    return 0;
+}
+```
+
+@tab C++
+
+```cpp
+int minSubArrayLen(int target, vector<int>& nums) {
+    auto size = nums.size();
+
+    for (auto width = 1; width <= size; ++width) {
+        auto[beg, end] = std::make_pair(0, width);
+        while (end <= size) {
+            auto sum = 0;
+            for (auto i = beg; i < end; ++i)
+                sum += nums[i];
+            
+            if (sum >= target)
+                return width;
+            ++beg;
+            end = beg + width;
+        }
+    }
+
+    return 0;
+}
+```
+
 :::
 
-
 ### 方法 2: 二分查找
+
 ::: code-tabs
 @tab Rust
+
 ```rust
-/// Time complexity: O(n*log(n)), Space complexity: O(n)
+/// Time complexity: O(n*log(n))
+///
+/// Space complexity: O(n)
 pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
     let len = nums.len();
     let mut res = usize::MAX;
@@ -125,11 +211,8 @@ pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
 
     for i in 0..len {
         let to_find = target + sums[i];
-        let idx = match sums.binary_search(&to_find) {
-            Ok(idx) => idx,
-            Err(idx) => idx,
-        };
-        if idx != sums.len() {
+        let idx = sums.binary_search(&to_find).unwrap_or_else(|idx| idx);
+        if idx <= len {
             res = std::cmp::min(res, idx - i);
         }
     }
@@ -143,8 +226,8 @@ pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
 ```
 
 @tab Java
+
 ```java
-// Time complexity: O(n*log(n)), Space complexity: O(n)
 public int minSubArrayLen(int target, int[] nums) {
     int res = Integer.MAX_VALUE;
     int[] sums = new int[nums.length + 1];
@@ -156,7 +239,7 @@ public int minSubArrayLen(int target, int[] nums) {
         int toFind = target + sums[i];
         int idx = Arrays.binarySearch(sums, toFind);
         idx = idx < 0 ? Math.abs(idx) - 1 : idx;
-        if (idx != sums.length) {
+        if (idx <= nums.length) {
             res = Math.min(res, idx - i);
         }
     }
@@ -164,14 +247,99 @@ public int minSubArrayLen(int target, int[] nums) {
     return res == Integer.MAX_VALUE ? 0 : res;
 }
 ```
+
+@tab Go
+
+```go
+import (
+    "math"
+    "slices"
+)
+
+func minSubArrayLen(target int, nums []int) int {
+    size := len(nums)
+    res := math.MaxInt
+    sums := make([]int, size+1)
+
+    for i := 0; i < size; i++ {
+        sums[i+1] = sums[i] + nums[i]
+    }
+
+    for i := 0; i < size; i++ {
+        toFind := target + sums[i]
+        idx, _ := slices.BinarySearch(sums, toFind)
+        if idx <= size {
+            res = min(res, idx-i)
+        }
+    }
+
+    if res != math.MaxInt {
+        return res
+    }
+    return 0
+}
+```
+
+@tab C\#
+
+```csharp
+public int MinSubArrayLen(int target, int[] nums)
+{
+    int res = Int32.MaxValue;
+    int[] sums = new int[nums.Length + 1];
+
+    for (int i = 0; i < nums.Length; i++)
+        sums[i + 1] = sums[i] + nums[i];
+
+    for (int i = 0; i < nums.Length; i++)
+    {
+        int toFind = target + sums[i];
+        int idx = Array.BinarySearch(sums, toFind);
+        if (idx < 0)
+            idx = Math.Abs(idx) - 1;
+        if (idx <= nums.Length)
+            res = Math.Min(res, idx - i);
+    }
+
+    return res == Int32.MaxValue ? 0 : res;
+}
+```
+
+@tab C++
+
+```cpp
+#include <cstdint>
+
+int minSubArrayLen(int target, vector<int>& nums) {
+    const auto size = nums.size();
+    int res = INT32_MAX;
+    vector<int> sums(size + 1);
+
+    for (auto i = 0; i < size; ++i)
+        sums[i + 1] = sums[i] + nums[i];
+
+    for (auto i = 0; i < size; ++i) {
+        auto to_find = sums[i] + target;
+        auto idx = std::lower_bound(sums.cbegin(), sums.cend(), to_find) - sums.begin();
+        if (idx <= size)
+            res = std::min(res, static_cast<int>(idx - i));
+    }
+
+    return res == INT32_MAX ? 0 : res;
+}
+```
+
 :::
 
-
 ### 方法 3: 滑动窗口
+
 ::: code-tabs
 @tab Rust
+
 ```rust
-/// Time complexity: O(n), Space complexity: O(1)
+/// Time complexity: O(n)
+///
+/// Space complexity: O(1)
 pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
     let len = nums.len();
     let mut res = usize::MAX;
@@ -196,6 +364,7 @@ pub fn min_sub_array_len(target: i32, nums: Vec<i32>) -> i32 {
 ```
 
 @tab Java
+
 ```java
 // Time complexity: O(n), Space complexity: O(1)
 public int minSubArrayLen(int target, int[] nums) {
@@ -207,11 +376,87 @@ public int minSubArrayLen(int target, int[] nums) {
         sum += nums[i];
         while (sum >= target) {
             res = Math.min(res, i + 1 - left);
-            sum -= nums[left++];
+            sum -= nums[left];
+            ++left;
         }
     }
 
     return res == Integer.MAX_VALUE ? 0 : res;
 }
 ```
+
+@tab Go
+
+```go
+import "math"
+
+func minSubArrayLen(target int, nums []int) int {
+    size := len(nums)
+    res := math.MaxInt
+    left := 0
+    sum := 0
+
+    for i := 0; i < size; i++ {
+        sum += nums[i]
+        for sum >= target {
+            res = min(res, i-left+1)
+            sum -= nums[left]
+            left++
+        }
+    }
+
+    if res != math.MaxInt {
+        return res
+    }
+    return 0
+}
+```
+
+@tab C\#
+
+```csharp
+public int MinSubArrayLen(int target, int[] nums)
+{
+    int res = Int32.MaxValue;
+    int left = 0;
+    int sum = 0;
+
+    for (int i = 0; i < nums.Length; i++)
+    {
+        sum += nums[i];
+        while (sum >= target)
+        {
+            res = Math.Min(res, i - left + 1);
+            sum -= nums[left];
+            ++left;
+        }
+    }
+
+    return res == Int32.MaxValue ? 0 : res;
+}
+```
+
+@tab C++
+
+```cpp
+#include <cstdint>
+
+int minSubArrayLen(int target, vector<int>& nums) {
+    const auto size = nums.size();
+    int res = INT32_MAX;
+    int left = 0, sum = 0;
+
+    for (auto i = 0; i < size; ++i) {
+        sum += nums[i];
+        while (sum >= target) {
+            res = std::min(res, i - left + 1);
+            sum -= nums[left];
+            ++left;
+        }
+    }
+
+    return res == INT32_MAX ? 0 : res;
+}
+```
+
 :::
