@@ -13,6 +13,7 @@ tag:
 ---
 
 ## I Problem
+
 You are visiting a farm that has a single row of fruit trees arranged from left to right. The trees are represented by an integer array fruits where fruits[i] is the type of fruit the iᵗʰ tree produces.
 
 You want to collect as much fruit as possible. However, the owner has some strict rules that you must follow:
@@ -23,47 +24,53 @@ You want to collect as much fruit as possible. However, the owner has some stric
 
 Given the integer array fruits, return the maximum number of fruits you can pick.
 
-**Example 1**
-Input: fruits = [1,2,1]
+**Example 1:**
+Input: fruits = [1, 2, 1]
 Output: 3
 Explanation: We can pick from all 3 trees.
 
-**Example 2**
-Input: fruits = [0,1,2,2]
+**Example 2:**
+Input: fruits = [0, 1, 2, 2]
 Output: 3
-Explanation: We can pick from trees [1,2,2]. If we had started at the first tree, we would only pick from trees [0,1].
+Explanation: We can pick from trees [1, 2, 2]. If we had started at the first tree, we would only pick from trees [0, 1].
 
-**Example 3**
-Input: fruits = [1,2,3,2,2]
+**Example 3:**
+Input: fruits = [1, 2, 3, 2, 2]
 Output: 4
-Explanation: We can pick from trees [2,3,2,2]. If we had started at the first tree, we would only pick from trees [1,2].
+Explanation: We can pick from trees [2, 3, 2, 2]. If we had started at the first tree, we would only pick from trees [1, 2].
 
-**Constraints**
+**Constraints:**
 
 - 1 <= fruits.length <= 10⁵
 - 0 <= fruits[i] < fruits.length
 
-**Related Topics**
+**Related Topics:**
 
 - Array
 - Hash Table
 - Sliding Window
 
 ## II Solution
+
 ### Approach 1: Brute Force
+
 ::: code-tabs
 @tab Rust
+
 ```rust
 /// Time Limit Exceeded
+///
+/// Time Complexity: O(n^3)
+/// Space Complexity: O(1)
 pub fn total_fruit(fruits: Vec<i32>) -> i32 {
     let len = fruits.len();
     let mut set = HashSet::new();
 
     for width in (2..=len).rev() {
         let mut left = 0;
-        let mut right = left + width;
+        let mut right = width;
+
         while right <= len {
-            set.clear();
             for i in left..right {
                 set.insert(fruits[i]);
                 if set.len() > 2 {
@@ -76,23 +83,25 @@ pub fn total_fruit(fruits: Vec<i32>) -> i32 {
 
             left += 1;
             right = left + width;
+            set.clear();
         }
     }
 
-    fruits.len() as i32
+    len as i32
 }
 ```
 
 @tab Java
+
 ```java
 public int totalFruit(int[] fruits) {
     HashSet<Integer> set = new HashSet<>();
 
     for (int width = fruits.length; width >= 2; width--) {
         int left = 0;
-        int right = left + width;
+        int right = width;
+
         while (right <= fruits.length) {
-            set.clear();
             for (int i = left; i < right; i++) {
                 set.add(fruits[i]);
                 if (set.size() > 2) {
@@ -102,20 +111,122 @@ public int totalFruit(int[] fruits) {
             if (set.size() == 2) {
                 return width;
             }
+
             left++;
             right = left + width;
+            set.clear();
         }
     }
     
     return fruits.length;
 }
 ```
+
+@tab Go
+
+```go
+func totalFruit(fruits []int) int {
+    size := len(fruits)
+    set := make(map[int]struct{})
+
+    for width := size; width >= 2; width-- {
+        left, right := 0, width
+
+        for right <= size {
+            for i := left; i < right; i++ {
+                set[fruits[i]] = struct{}{}
+                if len(set) > 2 {
+                    break
+                }
+            }
+            if len(set) == 2 {
+                return width
+            }
+
+            left++
+            right = left + width
+            clear(set)
+        }
+    }
+
+    return size
+}
+```
+
+@tab C\#
+
+```csharp
+public int TotalFruit(int[] fruits)
+{
+    HashSet<int> set = new HashSet<int>();
+
+    for (int width = fruits.Length; width >= 2; --width)
+    {
+        int left = 0;
+        int right = width;
+
+        while (right <= fruits.Length)
+        {
+            for (int i = left; i < right; ++i)
+            {
+                set.Add(fruits[i]);
+                if (set.Count > 2)
+                    break;
+            }
+            if (set.Count == 2)
+                return width;
+
+            ++left;
+            right = left + width;
+            set.Clear();
+        }
+    }
+
+    return fruits.Length;
+}
+```
+
+@tab C++
+
+```cpp
+int totalFruit(vector<int>& fruits) {
+    auto size = fruits.size();
+    unordered_set<int> set;
+
+    for (auto width = size; width >= 2; --width) {
+        auto left = 0;
+        auto right = width;
+
+        while (right <= size) {
+            for (auto i = left; i < right; ++i) {
+                set.insert(fruits[i]);
+                if (set.size() > 2)
+                    break;
+            }
+            if (set.size() == 2)
+                return width;
+            
+            ++left;
+            right = left + width;
+            set.clear();
+        }
+    }
+
+    return size;
+}
+```
+
 :::
 
 ### Approach 2: Sliding Window
+
 ::: code-tabs
 @tab Rust
+
 ```rust
+/// Time Complexity: O(n)
+///
+/// Space Complexity: O(1)
 pub fn total_fruit(fruits: Vec<i32>) -> i32 {
     let mut map = HashMap::new();
     let mut left = 0;
@@ -125,6 +236,7 @@ pub fn total_fruit(fruits: Vec<i32>) -> i32 {
         map.entry(fruits[right])
             .and_modify(|v| *v += 1)
             .or_insert(1);
+
         while map.len() > 2 {
             if let Some(v) = map.get_mut(&fruits[left]) {
                 *v -= 1;
@@ -134,6 +246,7 @@ pub fn total_fruit(fruits: Vec<i32>) -> i32 {
             }
             left += 1;
         }
+
         res = std::cmp::max(res, right - left + 1);
     }
 
@@ -142,6 +255,7 @@ pub fn total_fruit(fruits: Vec<i32>) -> i32 {
 ```
 
 @tab Java
+
 ```java
 public int totalFruit(int[] fruits) {
     int left = 0;
@@ -150,6 +264,7 @@ public int totalFruit(int[] fruits) {
 
     for (int right = 0; right < fruits.length; right++) {
         map.put(fruits[right], map.getOrDefault(fruits[right], 0) + 1);
+
         while (map.size() > 2) {
             map.put(fruits[left], map.get(fruits[left]) - 1);
             if (map.get(fruits[left]) == 0) {
@@ -157,10 +272,93 @@ public int totalFruit(int[] fruits) {
             }
             left++;
         }
+
         res = Math.max(res, right - left + 1);
     }
 
     return res;
 }
 ```
+
+@tab Go
+
+```go
+func totalFruit(fruits []int) int {
+    left, res := 0, 0
+    _map := make(map[int]int)
+
+    for right := 0; right < len(fruits); right++ {
+        _map[fruits[right]]++
+
+        for len(_map) > 2 {
+            _map[fruits[left]]--
+            if _map[fruits[left]] == 0 {
+                delete(_map, fruits[left])
+            }
+            left++
+        }
+
+        res = max(res, right-left+1)
+    }
+
+    return res
+}
+```
+
+@tab C\#
+
+```csharp
+public int TotalFruit(int[] fruits)
+{
+    int res = 0;
+    int left = 0;
+    Dictionary<int, int> map = new Dictionary<int, int>();
+
+    for (int right = 0; right < fruits.Length; right++)
+    {
+        if (map.TryGetValue(fruits[right], out var count))
+            map[fruits[right]] = count + 1;
+        else
+            map[fruits[right]] = 1;
+        
+        while (map.Count > 2)
+        {
+            map[fruits[left]]--;
+            if (map[fruits[left]] == 0)
+                map.Remove(fruits[left]);
+            ++left;
+        }
+
+        res = Math.Max(res, right - left + 1);
+    }
+    
+    return res;
+}
+```
+
+@tab C++
+
+```cpp
+int totalFruit(vector<int>& fruits) {
+    int res = 0;
+    int left = 0;
+    unordered_map<int, int> map;
+
+    for (auto right = 0; right < fruits.size(); ++right) {
+        map[fruits[right]]++;
+
+        while (map.size() > 2) {
+            map[fruits[left]]--;
+            if (map[fruits[left]] == 0)
+                map.erase(fruits[left]);
+            ++left;
+        }
+
+        res = std::max(res, right - left + 1);
+    }
+
+    return res;
+}
+```
+
 :::
